@@ -15,7 +15,28 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "Interface.dmf"
 #include "Code\_Constants.dm"
+#include "Code\Atom.dm"
+#include "Code\Client.dm"
+#include "Code\Movable.dm"
 #include "Code\Turf.dm"
+#include "Code\World.dm"
+#include "Code\WorldMain.dm"
+#include "Code\Mobs\Mob.dm"
+#include "Code\Mobs\Player.dm"
+#include "Code\Objects\Brick.dm"
+#include "Code\Objects\Object.dm"
+#include "Code\Objects\PlayerStart.dm"
+#include "Code\Utility\Geometry.dm"
+#include "Code\Utility\Lists.dm"
+#include "Code\Utility\Math.dm"
+#include "Code\Utility\Point.dm"
+#include "Code\Utility\Queue.dm"
+#include "Code\Utility\Stack.dm"
+#include "Code\Utility\Text.dm"
+#include "Code\Utility\TurfHelpers.dm"
+#include "Code\Utility\Types.dm"
+#include "Maps\Map.dmm"
 // END_INCLUDE
 
