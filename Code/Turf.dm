@@ -3,7 +3,7 @@
 	icon = 'Flats.dmi'
 	icon_state = "White"
 
-	color = rgb(128, 128, 255)
+	color = rgb(128, 160, 255)
 
 /turf/proc/Neighbors()
 	. = list( )
