@@ -1,7 +1,6 @@
 client
 	var
 		list/Keys = list( )
-		list/Pressed = list( )
 
 	show_popup_menus = FALSE
 	control_freak = CONTROL_FREAK_ALL
@@ -28,18 +27,18 @@ client
 	Keys[K] = KeyStateUp
 
 /client/proc/KeyDown(K)
-	world.log << "KEYDOWN"
-	Keys[K] = (Keys[K] | KeyStatePressed) || KeyStatePressed
+	Keys[K] = KeyStatePressed
 
 /client/proc/KeyTick()
-	Pressed = list( )
 	for (var/K in Keys)
-		if (Keys[K] == KeyStatePressed)
-			Pressed[K] = TRUE
-			Keys[K] |= KeyStateDepressed
+		if (Keys[K] > KeyStateDepressed)
+			Keys[K] -= 1
 
 /client/proc/ButtonPressed(var/Button)
-	return Keys[Button]
+	return Keys[Button] > KeyStateDepressed
+
+/client/proc/ButtonDown(var/Button)
+	return Keys[Button] > KeyStateUp
 
 /client/proc/InitializeKeyboardMacros()
 	for(var/k in list("0","1","2","3","4","5","6","7","8","9","Q","W","E","R","T","Y","U","I","O","P","A","S","D","F",
