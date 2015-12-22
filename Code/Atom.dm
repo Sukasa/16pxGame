@@ -5,33 +5,8 @@ atom
 
 //------------------------------------
 
-/atom/movable/Cross(var/atom/movable/AM)
-	AM.CrossedBy(src)
-	. = ..()
-
-/atom/movable/proc/CrossedBy(var/atom/movable/AM)
-	return
-
-/atom/movable/Uncross(var/atom/movable/AM)
-	AM.UnCrossedBy(src)
-	. = ..()
-
-/atom/movable/proc/UnCrossedBy(var/atom/movable/AM)
-	return
-
-//------------------------------------
-
-/atom/movable/proc/GetFineX()
-	return (src.x * world.icon_size) + src.step_x
-
-
-/atom/movable/proc/GetFineY()
-	return (src.y * world.icon_size) + src.step_y
-
-//------------------------------------
-
 // Returns the angle to the passed atom, where 0° is due north
-/atom/movable/proc/GetAngleTo(var/atom/movable/To)
+/atom/proc/GetAngleTo(var/atom/To)
 	var/Point/P = new(src)
 	return P.GetAngleTo(To)
 
