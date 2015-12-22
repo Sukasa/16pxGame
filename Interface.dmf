@@ -4,8 +4,8 @@ macro "Macros"
 window "MainWindow"
 	elem "MainWindow"
 		type = MAIN
-		pos = 281,0
-		size = 640x480
+		pos = 335,23
+		size = 640x640
 		anchor1 = none
 		anchor2 = none
 		font-family = ""
@@ -44,7 +44,7 @@ window "MainWindow"
 	elem "map1"
 		type = MAP
 		pos = 0,0
-		size = 640x480
+		size = 640x640
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = ""
