@@ -4,10 +4,10 @@
 		XVelocity = 0
 		Grounded = FALSE
 		StickyPlatform = FALSE
-		MaximumVelocity = 16
 
 		const
 			Gravity = 0.6
+			MaximumVelocity = 32 // Maximum sprite velocity in any axis
 
 		list/Riders = list( )
 
@@ -21,7 +21,22 @@
 		Spawn()
 			return
 
+		Bumped (atom/movable/AM)
+			return
+
+	New()
+		. = ..()
+		Spawn()
+
+	Bump(atom/movable/AM)
+		. = ..()
+		AM:Bumped(src)
+		if (YVelocity < 0 && ismob(AM))
+			AM:Riders += src
+
 	Tick()
+		. = ..()
+
 
 		if (XVelocity < -MaximumVelocity)
 			XVelocity = -MaximumVelocity
@@ -30,29 +45,30 @@
 		if (YVelocity > MaximumVelocity)
 			YVelocity = MaximumVelocity
 
+
 		YVelocity -= (Gravity * GetGravityModifier())
 		if (YVelocity < -MaximumVelocity)
 			YVelocity = -MaximumVelocity
 
 		for(var/atom/movable/AM in Riders)
-			if (XVelocity != 0)
-				AM.MoveBy(XVelocity, 0)
+			AM.SubStepX = SubStepX
+			AM.SubStepY = SubStepY
+			AM.MoveBy(XVelocity, 0)
 			if (YVelocity > 0 || (StickyPlatform && YVelocity != 0))
 				AM.MoveBy(0, YVelocity)
 
 		Riders = list( )
 
 		if (!MoveBy(XVelocity, 0))
-			XVelocity = 0
+			XVelocity = 0 // 0 Velocity if we hit a wall going sideways
 
 		if (YVelocity < 0)
-			Grounded = !MoveBy(0, YVelocity)
+			Grounded = !MoveBy(0, YVelocity) // Try to move downwards, and flag Grounded if we cant (i.e. riding a mob, solid floor, etc)
+			if (Grounded)
+				YVelocity = 0
 		else
 			Grounded = FALSE
 
-			// Try to move upwards, and 0 velocity if we hit a wall
+			// Try to move upwards, and 0 velocity if we hit a ceiling
 			if (!MoveBy(0, YVelocity))
 				YVelocity = 0
-
-		if (Grounded && YVelocity < 0)
-			YVelocity = 0
