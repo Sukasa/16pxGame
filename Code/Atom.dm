@@ -32,6 +32,8 @@ atom/proc/GetDistanceTo(var/atom/movable/To)
 	Age++
 	return
 
+/atom/proc/isplayer(atom/A)
+	return istype(A, /mob/Player)
 
 //------------------------------------
 
