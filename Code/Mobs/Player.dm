@@ -17,10 +17,9 @@
 	New()
 		..()
 
-		Spawn()
-
 	Tick()
-		..()
+
+		world.log << "Player Tick"
 
 		if (!client) // If the client disconnected, twiddle thumbs
 			return;
@@ -53,6 +52,7 @@
 				YVelocity = 4.5
 
 		client.KeyTick() // Do client keyboard stuff
+		..()
 
 	Damage(/atom/movable/AM)
 		Spawn()

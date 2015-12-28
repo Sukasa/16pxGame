@@ -2,9 +2,7 @@
 	icon = 'Spikes.dmi'
 	icon_state = "Spikes"
 
-	Cross(atom/movable/AM)
+	Crossed(atom/movable/AM)
 		. = ..(AM)
-
-		if (istype(AM, /mob))
+		if (ismob(AM))
 			AM:Damage(src)
-

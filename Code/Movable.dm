@@ -9,26 +9,11 @@
 	var/NewX = (StepX + step_x + SubStepX) + (x * world.icon_size)
 	var/NewY = (StepY + step_y + SubStepY) + (y * world.icon_size)
 
-	SubStepX = NewX - round(NewX)
-	SubStepY = NewY - round(NewY)
+	. = Move(locate(round(NewX / world.icon_size), round(NewY / world.icon_size), z), 0, round(NewX % world.icon_size), round(NewY % world.icon_size))
 
-	return Move(locate(round(NewX / world.icon_size), round(NewY / world.icon_size), z), 0, round(NewX % world.icon_size), round(NewY % world.icon_size))
-
-//------------------------------------
-
-/atom/movable/Cross(var/atom/movable/AM)
-	AM.CrossedBy(src)
-	. = ..()
-
-/atom/movable/proc/CrossedBy(var/atom/movable/AM)
-	return
-
-/atom/movable/Uncross(var/atom/movable/AM)
-	AM.UnCrossedBy(src)
-	. = ..()
-
-/atom/movable/proc/UnCrossedBy(var/atom/movable/AM)
-	return
+	if (.)
+		SubStepX = NewX - round(NewX)
+		SubStepY = NewY - round(NewY)
 
 //------------------------------------
 
@@ -40,3 +25,6 @@
 	return (src.y * world.icon_size) + src.step_y
 
 //------------------------------------
+
+/atom/movable/proc/Above(atom/movable/Ref)
+	return GetFineY() + bound_y >= Ref.GetFineY() + Ref.bound_height + bound_y
