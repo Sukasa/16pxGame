@@ -30,6 +30,7 @@
 #include "Code\Objects\Brick.dm"
 #include "Code\Objects\PlayerStart.dm"
 #include "Code\Objects\Spikes.dm"
+#include "Code\Objects\Collectibles\Emerald.dm"
 #include "Code\Utility\Geometry.dm"
 #include "Code\Utility\Lists.dm"
 #include "Code\Utility\Math.dm"

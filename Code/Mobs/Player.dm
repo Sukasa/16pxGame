@@ -13,6 +13,7 @@
 			MaxDecel = 1.3
 			JumpSpeed = 8.9
 			MaxSpeed = 6
+		Emeralds = 0
 
 	New()
 		..()
