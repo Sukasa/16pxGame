@@ -10,6 +10,7 @@
 			MaximumVelocity = 32 // Maximum sprite velocity in any axis
 
 		list/Riders = list( )
+		list/Riding = list( )
 
 	proc
 		GetGravityModifier()
@@ -21,8 +22,16 @@
 		Spawn()
 			return
 
-		Bumped (atom/movable/AM)
+		Die()
+			loc = null
+			Riders = list( )
+			for(var/mob/M in Riding)
+				M.Riders -= src
+			Riding = list( )
 			return
+
+		Jump(var/force = 0)
+			return FALSE
 
 	New()
 		. = ..()
@@ -30,32 +39,34 @@
 
 	Bump(atom/movable/AM)
 		. = ..()
-		AM:Bumped(src)
+		AM.Bumped(src)
 		if (YVelocity < 0 && ismob(AM))
 			AM:Riders += src
+			Riding += AM
 
 	Tick()
 		. = ..()
 
-
+		// Limit X velocity to within maximum the physics engine can handle
 		if (XVelocity < -MaximumVelocity)
 			XVelocity = -MaximumVelocity
 		if (XVelocity > MaximumVelocity)
 			XVelocity = MaximumVelocity
-		if (YVelocity > MaximumVelocity)
-			YVelocity = MaximumVelocity
 
-
+		// Apply gravity and then limit Y velocity to maximum velocity the physics engine can handle
 		YVelocity -= (Gravity * GetGravityModifier())
 		if (YVelocity < -MaximumVelocity)
 			YVelocity = -MaximumVelocity
+		if (YVelocity > MaximumVelocity)
+			YVelocity = MaximumVelocity
 
-		for(var/atom/movable/AM in Riders)
-			AM.SubStepX = SubStepX
-			AM.SubStepY = SubStepY
-			AM.MoveBy(XVelocity, 0)
+		for(var/mob/M in Riders)
+			M.SubStepX = SubStepX
+			M.SubStepY = SubStepY
+			M.MoveBy(XVelocity, 0)
 			if (YVelocity > 0 || (StickyPlatform && YVelocity != 0))
-				AM.MoveBy(0, YVelocity)
+				M.MoveBy(0, YVelocity)
+			M.Riding -= src
 
 		Riders = list( )
 

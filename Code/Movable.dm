@@ -5,6 +5,10 @@
 		SubStepY = 0
 		SmoothMove = 0
 
+	proc
+		Bumped (atom/movable/AM)
+			return
+
 /atom/movable/proc/MoveBy(var/StepX, var/StepY)
 	var/NewX = (StepX + step_x + SubStepX) + (x * world.icon_size)
 	var/NewY = (StepY + step_y + SubStepY) + (y * world.icon_size)

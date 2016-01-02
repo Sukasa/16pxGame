@@ -8,7 +8,5 @@
 	bound_width = 6
 	bound_height = 13
 
-	Crossed(atom/movable/AM)
-		if (isplayer(AM))
-			AM:Emeralds++
-			loc = null
+	Collected(mob/Player/Player)
+		Player.Emeralds++

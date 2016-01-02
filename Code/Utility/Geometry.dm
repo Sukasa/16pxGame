@@ -13,7 +13,7 @@ proc/Raytrace(var/atom/Start, var/Angle, var/CollideWith = 0)
 	if (!CollideWith)
 		CollideWith = list(/atom)
 
-	//
+	// TODO
 
 	return
 
