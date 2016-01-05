@@ -31,4 +31,4 @@
 //------------------------------------
 
 /atom/movable/proc/Above(atom/movable/Ref)
-	return GetFineY() + bound_y >= Ref.GetFineY() + Ref.bound_height + bound_y
+	return GetFineY() + bound_y >= Ref.GetFineY() + Ref.bound_height + Ref.bound_y
