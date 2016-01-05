@@ -3,8 +3,9 @@
 "c" = (/obj/Brick,/turf,/area)
 "d" = (/obj/Sparkle,/turf,/area)
 "e" = (/obj/PlayerStart,/turf,/area)
-"f" = (/mob/Crawler,/turf,/area)
-"g" = (/obj/Hazards/Spikes,/turf,/area)
+"f" = (/obj/Platform,/turf,/area)
+"g" = (/obj/Platform,/mob/Crawler,/turf,/area)
+"h" = (/obj/Hazards/Spikes,/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -24,9 +25,9 @@ aaaaaaaaaaaacccaaaaaaaaaaaaaaaaaaaaaaaaaacccaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaacdaaaaabaaabaaaabaaabaaaaadcaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaacaaabaaaaaaaaaaaaaaaaaabaaacaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaacaaaaaaaaaaeaaaaaaaaaaaaaaacaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaccccccadaacccaacccaadaccccccaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaacaabaafabaacaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaccccccadaacccffcccaadaccccccaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaffaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaacaabafgabaacaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -66,5 +67,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 "}
