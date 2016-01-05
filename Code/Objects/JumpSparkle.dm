@@ -1,6 +1,6 @@
 /obj/Sparkle
 	name = "Jump Sparkle"
-	icon = 'Sparkle.dmi'
+	icon = 'JumpSparkle.dmi'
 	icon_state = "Sparkle"
 
 	invisibility = 0
