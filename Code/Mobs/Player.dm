@@ -22,6 +22,7 @@
 			MaxDecel = 1.3
 			JumpSpeed = 8.9
 			MaxSpeed = 6
+			MaxHealth = 2
 			MercyInvincibilityPeriod = 1.25
 
 	New()
@@ -68,7 +69,7 @@
 
 		client.KeyTick() // Do client keyboard stuff
 
-		if (Invincibility)
+		if (Invincibility > 0)
 			Invincibility--
 			if (invisibility)
 				invisibility = 0
@@ -90,7 +91,7 @@
 		..()
 
 
-	Jump(var/Force = 0) //
+	Jump(var/Force = 0)
 		if (Grounded || Force)
 			YVelocity = max(YVelocity, 0)
 			YVelocity += JumpSpeed
@@ -98,23 +99,23 @@
 		return FALSE
 
 	Damage(var/atom/movable/AM)
-		if (Invincibility)
-			return
-		Health -= AM.DamageValue
-		Health = round(Health)
-		if (Health <= 0)
-			Die()
-		else
-			Invincibility = world.fps * MercyInvincibilityPeriod
+		if (Invincibility < 1)
+			Health -= AM.DamageValue
+			Health = round(Health)
+			if (Health < 1)
+				Die()
+			else
+				Invincibility = world.fps * MercyInvincibilityPeriod
 
 	Die()
 		..()
 		Spawn()
 
 	Spawn()
-		loc = SpawnLocation
-		loc = get_turf(SpawnLocation)
+		Move(get_turf(SpawnLocation), 0, 0)
 		XVelocity = 0
 		YVelocity = 0
 		SubStepX = 0
 		SubStepY = 0
+		Invincibility = 1 // 1 frame of invincibility, so that if we get hit by a double-bump (aka landed on 2 spike blocks at once) it doesn't kill us, make us respawn, and -then- damage us again
+		Health = MaxHealth
