@@ -6,9 +6,12 @@ Queue
 			Items += Item
 
 		Dequeue()
+			. = Peek()
+			Items.Cut(1, 2)
+
+		Peek()
 			ASSERT(Items.len)
 			. = Items[1]
-			Items.Cut(1, 2)
 
 		IsEmpty()
 			return Items.len == 0
