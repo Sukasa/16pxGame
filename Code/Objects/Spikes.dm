@@ -1,8 +1,20 @@
-/obj/Hazards/Spikes
+/obj/Hazard/Spikes
 	icon = 'Spikes.dmi'
 	icon_state = "Spikes"
+	dir = NORTH
+	density = 1
 
-	Crossed(atom/movable/AM)
+	Bumped(atom/movable/AM)
+		Cross(AM)
+
+	Cross(atom/movable/AM)
 		. = ..(AM)
 		if (ismob(AM))
-			AM:Damage(src)
+			if (dir == NORTH && AM.Above(src))
+				AM:Damage(src)
+			if (dir == EAST && AM.RightOf(src))
+				AM:Damage(src)
+			if (dir == WEST && RightOf(AM))
+				AM:Damage(src)
+			if (dir == SOUTH && Above(AM))
+				AM:Damage(src)
