@@ -12,7 +12,7 @@
 
 	Tick()
 		if (Grounded) // As long as we're on the ground, plod along at a varying bug-ish speed
-			XVelocity = Speed * (0.75 + (0.45 * sin(Age * 10) * Speed))
+			XVelocity = Speed * 0.75 + (0.45 * sin(Age * 10) * Speed)
 
 		..()
 
