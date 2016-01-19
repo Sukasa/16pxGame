@@ -4,6 +4,7 @@
 		XVelocity = 0
 		Grounded = FALSE
 		StickyPlatform = FALSE
+		DoesRide = TRUE
 
 		const
 			Gravity = 0.6
@@ -14,6 +15,9 @@
 
 	proc
 		GetGravityModifier()
+			if (Riding && Riding.len > 0)
+				var/mob/M = Riding[1]
+				return M.GetGravityModifier()
 			return 1
 
 		Damage(atom/movable/DamageSource)
@@ -33,6 +37,14 @@
 		Jump(var/force = 0)
 			return FALSE
 
+		CrossedBy(var/mob/M)
+			return FALSE
+
+	Crossed(var/atom/A)
+		if (ismob(A))
+			A:CrossedBy(src)
+		..(A)
+
 	New()
 		. = ..()
 		Spawn()
@@ -40,10 +52,9 @@
 	Bump(atom/movable/AM)
 		. = ..()
 		AM.Bumped(src)
-		if (YVelocity < 0 && ismob(AM))
+		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide)
 			AM:Riders += src
 			Riding += AM
-
 	Tick()
 		. = ..()
 
@@ -66,6 +77,10 @@
 			M.MoveBy(XVelocity, 0)
 			if (YVelocity > 0 || (StickyPlatform && YVelocity != 0))
 				M.MoveBy(0, YVelocity)
+
+			if (M.YVelocity < YVelocity && YVelocity < 0 && !StickyPlatform)
+				M.YVelocity = YVelocity
+
 			M.Riding -= src
 
 		Riders = list( )
@@ -83,3 +98,4 @@
 			// Try to move upwards, and 0 velocity if we hit a ceiling
 			if (!MoveBy(0, YVelocity))
 				YVelocity = 0
+
