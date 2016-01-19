@@ -1,6 +1,7 @@
 atom
 	var
 		Age
+		DamageValue = 1
 	mouse_opacity = 0
 
 //------------------------------------
@@ -30,7 +31,6 @@ atom/proc/GetDistanceTo(var/atom/movable/To)
 
 /atom/proc/Tick()
 	Age++
-	return
 
 /atom/proc/isplayer(atom/A)
 	return istype(A, /mob/Player)
