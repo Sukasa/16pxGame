@@ -5,9 +5,6 @@
 	density = 1
 
 	Bumped(atom/movable/AM)
-		Cross(AM)
-
-	Cross(atom/movable/AM)
 		. = ..(AM)
 		if (ismob(AM))
 			if (dir == NORTH && AM.Above(src))
