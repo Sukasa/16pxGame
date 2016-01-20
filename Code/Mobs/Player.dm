@@ -88,7 +88,11 @@
 		if (Stun > 0)
 			Stun--
 
+		world.log << SubStepY + step_y
+
 		..()
+
+
 
 
 	Jump(var/Force = 0)

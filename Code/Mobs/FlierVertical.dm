@@ -4,6 +4,7 @@
 	icon = 'Flier.dmi'
 	icon_state = "Flier"
 	dir = NORTH
+	StickyPlatform = TRUE
 
 	bound_height = 8
 	DoesRide = FALSE
@@ -18,6 +19,7 @@
 		. = ..()
 		if (dir == SOUTH)
 			Mult *= -1
+
 
 	Tick()
 

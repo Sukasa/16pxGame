@@ -55,6 +55,7 @@
 		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide)
 			AM:Riders += src
 			Riding += AM
+
 	Tick()
 		. = ..()
 
@@ -74,22 +75,25 @@
 		for(var/mob/M in Riders)
 			M.SubStepX = SubStepX
 			M.SubStepY = SubStepY
+
 			M.MoveBy(XVelocity, 0)
-			if (YVelocity > 0 || (StickyPlatform && YVelocity != 0))
+			if (YVelocity > 0 || (StickyPlatform && YVelocity < 0))
 				M.MoveBy(0, YVelocity)
 
-			if (M.YVelocity < YVelocity && YVelocity < 0 && !StickyPlatform)
+			if (M.YVelocity > YVelocity && YVelocity < 0 && StickyPlatform)
 				M.YVelocity = YVelocity
 
 			M.Riding -= src
 
-		Riders = list( )
 
 		if (!MoveBy(XVelocity, 0))
 			XVelocity = 0 // 0 Velocity if we hit a wall going sideways
 
 		if (YVelocity < 0)
 			Grounded = !MoveBy(0, YVelocity) // Try to move downwards, and flag Grounded if we cant (i.e. riding a mob, solid floor, etc)
+
+
+
 			if (Grounded)
 				YVelocity = 0
 		else
@@ -98,4 +102,6 @@
 			// Try to move upwards, and 0 velocity if we hit a ceiling
 			if (!MoveBy(0, YVelocity))
 				YVelocity = 0
+
+		Riders = list( )
 
