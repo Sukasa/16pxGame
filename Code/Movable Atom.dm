@@ -11,8 +11,11 @@
 
 /atom/movable/proc/MoveBy(var/StepX, var/StepY)
 
-	var/SX = SubStepX + step_x + StepX
-	var/SY = SubStepY + step_y + StepY
+	var/oSX = step_x
+	var/oSY = step_y
+
+	var/SX = SubStepX + oSX + StepX
+	var/SY = SubStepY + oSY + StepY
 
 	var/MX = round(SX)
 	var/MY = round(SY)
@@ -22,46 +25,20 @@
 	if (SY < 0)
 		SY += world.icon_size
 
-	var/NX = round(SX)
-	var/NY = round(SY)
+	var/NX = round(SX) % world.icon_size
+	var/NY = round(SY) % world.icon_size
 
 	. = Move(loc, 0, MX, MY)
+
+
 
 	if (step_x == NX)
 		// Successful X movement
 		SubStepX = SX - round(SX)
+
 	if (step_y == NY)
 		// Successful Y movement
 		SubStepY = SY - round(SY)
-
-/atom/movable/proc/OldMoveBy(var/StepX, var/StepY)
-	var/sx = step_x, sy = step_y    // put these in local vars for faster access
-	var/ssx = SubStepX, ssy = SubStepY  // same deal
-	var/NewSX = (StepX + sx + ssx)
-	var/NewSY = (StepY + sy + ssy)
-	var/RX = round(NewSX,1), RY = round(NewSY,1)
-	var/dx = NewSX - sx, dy = NewSY - sy
-	var/ax = abs(RX-sx), ay = abs(RY-sy)
-
-	SubStepX = NewSX - RX
-	SubStepY = NewSY - RY
-	. = Move(loc, 0, RX, RY)
-
-	if(. < max(ax,ay))
-		if(ax > ay)
-			SubStepX = 0
-			// apply fractional Y change
-			ssy = dy * . / ax
-			SubStepY = ssy - round(ssy)
-		else if(ay > ax)
-			SubStepY = 0
-            // apply fractional X change
-			ssx = dx * . / ay
-			SubStepX = ssx - round(ssx)
-		return FALSE
-	else
-		SubStepX = 0
-		SubStepY = 0
 
 //------------------------------------
 

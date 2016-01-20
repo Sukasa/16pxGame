@@ -15,9 +15,6 @@
 
 	proc
 		GetGravityModifier()
-			if (Riding && Riding.len > 0)
-				var/mob/M = Riding[1]
-				return M.GetGravityModifier()
 			return 1
 
 		Damage(atom/movable/DamageSource)
@@ -80,22 +77,21 @@
 			if (YVelocity > 0 || (StickyPlatform && YVelocity < 0))
 				M.MoveBy(0, YVelocity)
 
-			if (M.YVelocity > YVelocity && YVelocity < 0 && StickyPlatform)
+			if (M.YVelocity > YVelocity && YVelocity < 0)
 				M.YVelocity = YVelocity
 
+			M.Grounded = TRUE
+			M.SubStepY = 0
 			M.Riding -= src
-
 
 		if (!MoveBy(XVelocity, 0))
 			XVelocity = 0 // 0 Velocity if we hit a wall going sideways
 
-		if (YVelocity < 0)
-			Grounded = !MoveBy(0, YVelocity) // Try to move downwards, and flag Grounded if we cant (i.e. riding a mob, solid floor, etc)
-
-
-
+		if (YVelocity <= 0)
+			Grounded = !MoveBy(0, YVelocity) // Try to move downwards, and flag Grounded if we can't (i.e. riding a mob, solid floor, etc)
 			if (Grounded)
 				YVelocity = 0
+				SubStepY = 0
 		else
 			Grounded = FALSE
 
