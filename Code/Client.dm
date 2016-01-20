@@ -31,11 +31,11 @@ client
 
 /client/proc/KeyTick()
 	for (var/K in Keys)
-		if (Keys[K] > KeyStateDepressed)
+		if (Keys[K] > KeyStateHeld)
 			Keys[K] -= 1
 
 /client/proc/ButtonPressed(var/Button)
-	return Keys[Button] > KeyStateDepressed
+	return Keys[Button] > KeyStateHeld
 
 /client/proc/ButtonDown(var/Button)
 	return Keys[Button] > KeyStateUp

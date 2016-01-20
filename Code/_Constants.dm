@@ -22,7 +22,7 @@ var
 
 		KeyStateUp = 0				// Key is unpressed
 		KeyStatePressed = 3			// Key was just pressed
-		KeyStateDepressed = 1		// Key has been held down for more than 1 frame
+		KeyStateHeld = 1			// Key has been held down for more than 1 frame
 
 		Infinity = 1.#INF
 		NegativeInfinity = -1.#INF
