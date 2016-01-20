@@ -32,6 +32,7 @@
 #include "Code\Objects\_Object.dm"
 #include "Code\Objects\AcidBlock.dm"
 #include "Code\Objects\Brick.dm"
+#include "Code\Objects\Bubble.dm"
 #include "Code\Objects\Checkpoint.dm"
 #include "Code\Objects\JumpSparkle.dm"
 #include "Code\Objects\Platform.dm"
