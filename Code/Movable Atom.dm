@@ -4,6 +4,7 @@
 		SubStepX = 0
 		SubStepY = 0
 		SmoothMove = 0
+		Underwater = FALSE
 
 	proc
 		Bumped (atom/movable/AM)
@@ -51,8 +52,8 @@
 
 //------------------------------------
 
-/atom/movable/proc/Above(atom/movable/Ref)
-	return GetFineY() + bound_y >= Ref.GetFineY() + Ref.bound_height + Ref.bound_y
+/atom/movable/proc/Above(atom/movable/Ref, Fudge)
+	return GetFineY() + bound_y + Fudge >= Ref.GetFineY() + Ref.bound_height + Ref.bound_y
 
-/atom/movable/proc/RightOf(atom/movable/Ref)
-	return GetFineX() + bound_x >= Ref.GetFineX() + Ref.bound_width + Ref.bound_x
+/atom/movable/proc/RightOf(atom/movable/Ref, Fudge)
+	return GetFineX() + bound_x + Fudge >= Ref.GetFineX() + Ref.bound_width + Ref.bound_x
