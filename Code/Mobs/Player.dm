@@ -67,6 +67,13 @@
 			if (YVelocity > 4.5)
 				YVelocity = 4.5
 
+		if (Underwater)
+			XVelocity = min(abs(XVelocity), 7) * sign(XVelocity)
+			if (YVelocity < -3)
+				YVelocity = -3
+			if (YVelocity > 8)
+				YVelocity = 8
+
 		client.KeyTick() // Do client keyboard stuff
 
 		if (Invincibility > 0)
@@ -92,7 +99,7 @@
 		..()
 
 	Jump(var/Force = 0)
-		if (Grounded || Force)
+		if (Grounded || Force || Underwater)
 			YVelocity = max(YVelocity, 0)
 			YVelocity += JumpSpeed
 			return TRUE
