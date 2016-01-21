@@ -5,7 +5,8 @@
 
 	color = rgb(128, 160, 255)
 
-/turf/proc/Neighbors()
-	. = list( )
-	for(var/Dir in Cardinal8)
-		. += get_step(src, Dir)
+	proc
+		Neighbors()
+			. = list( )
+			for(var/Dir in Cardinal8)
+				. += get_step(src, Dir)
