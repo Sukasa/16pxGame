@@ -13,7 +13,7 @@
 		Period = 4
 		SwoopPeriod = 1.5
 		Speed = 4
-		AttackRangeY = 200
+		AttackRangeY = 192
 		AttackRangeX = 64
 		tmp
 			State = 0
@@ -55,7 +55,7 @@
 
 		if (State == 0) // Idle
 			if (Cooldown <= 0)
-				for(var/mob/P in world)
+				for(var/mob/Player/P in world)
 					if (CanAttack(P))
 						State = 1
 						OriginalY = GetFineY()
@@ -109,6 +109,6 @@
 			var/MyY = GetFineY()
 			var/MyX = GetFineX()
 
-			. = Y < MyY && Y >= MyY - AttackRangeY
+			. = (Y < MyY) && (Y >= (MyY - AttackRangeY))
 			. &= abs(X - MyX) < (AttackRangeX)
 			. &= ((Speed > 0) && (X > MyX)) || ((Speed < 0) && (X < MyX))
