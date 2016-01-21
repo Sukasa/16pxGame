@@ -1,55 +1,54 @@
 "a" = (/turf,/area)
-"b" = (/obj/Collectible/Emerald,/turf,/area)
-"c" = (/mob/Eagle,/turf,/area)
-"d" = (/obj/Brick,/turf,/area)
-"e" = (/obj/Sparkle,/turf,/area)
+"b" = (/mob/Eagle,/turf,/area)
+"c" = (/obj/Brick,/turf,/area)
+"d" = (/obj/Sparkle,/turf,/area)
+"e" = (/obj/Collectible/Emerald,/turf,/area)
 "f" = (/obj/Checkpoint,/turf,/area)
-"g" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
-"h" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
-"i" = (/mob/FlierVertical,/turf,/area)
-"j" = (/mob/FlierHorizontal,/turf,/area)
+"g" = (/mob/FlierHorizontal{step_x = 17},/turf,/area)
+"h" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
+"i" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
+"j" = (/mob/FlierVertical,/turf,/area)
 "k" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
 "l" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
 "m" = (/obj/PlayerStart,/turf,/area)
 "n" = (/obj/Platform,/turf,/area)
 "o" = (/obj/Platform,/mob/Crawler,/turf,/area)
-"p" = (/obj/Hazard/Spikes,/turf,/area)
+"p" = (/obj/Water/Surface,/turf,/area)
+"q" = (/obj/Water,/turf,/area)
+"r" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
+"s" = (/obj/Brick,/obj/Brick,/turf,/area)
+"t" = (/obj/Hazard/Spikes,/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddedaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabaaaaaaabbaaaaaaaaaaaeaaaaaaabdaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaafaaaaaaaaaaaaaaaaaaaddaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadddaaaaaggggaaaaaaaaggggaaaaadddaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadddeaaaaabaaabaaaabaaabaaaaaeddaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadhaaaabaaaaaaaaaijaaaaaaabaaaakaaaaaaaaaaaaaaaaa
-lllllllllllldhaaaaaaaaaaaamaaaaaaaaaaaaaaakaaaaaaaaaaaaaaaaa
-daaaaaaaadddddddddddaeaadddnndddaaeadddddddaaaaaaaaaaaaaaaaa
-daaabaadaaaaaaaaaaaaaaaaaaannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaaedabbbbfaaaaaaaadaabanoabaadaaaaaaaaaaaaaaaaaaaaaaaaaa
-dabaaaadddddddaaaaaaaedlllllllllldaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaeaaaaaaaaadaaaaaaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaaaaadddddaaaaaaeadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-dbaaeaaaaaaaaaaaaaaaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-deaaaabaadddaaaaaaaeaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaaaaaaadeaaaaaaaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaeaaaeaaadddaafaaaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaaaaaaadaddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-dlllllllllldaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccdcaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaeaaaaaaaeeaaaaaaaaaaadaaaaaaaecaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaafagaaaaaaaaaaaaaaaaaccaaaaaaaaaaaaaaaa
+aaaaaaaaaaaacccaaaaahhhhaaaaaaaahhhhaaaaacccaaaaaaaaaaaaaaaa
+aaaaaaaaaaaacccdaaaaaeaaaeaaaaeaaaeaaaaadccaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaciaaaaeaaaaaaaaaaaaaaaaaaeajaakaaaaaaaaaaaaaaaaa
+llllllllllllciaaaaaaaaaaaamaaaaaaaaaaaaaaakaaaaaaaaaaaaaaaaa
+caaaaaaaacccccccccccadaacccnncccaadacccccccaaaaaaaaaaaaaaaaa
+caaaeaacaaaaaaaaaaaaaaaaaaannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+caaaaadcaeeeefaaaaaaaacaaeanoaeaacpppppppcaaaaaaaaaaaaaaaaaa
+caeaaaacccccccaaaaaaadcllllllllllcqqqqqqqcaaaaaaaaaaaaaaaaaa
+caadaaaaaaaaacaaaaaaaacaaaaaaaaaacqrqqqrqcaaaaaaaaaaaaaaaaaa
+caaaaaaaacccccaaaaaadacaaaacpcccccqqqrqqqcaaaaaaaaaaaaaaaaaa
+ceaadaaaaaaaaaaaaaaaaacaaaacqqqqqqqqqqqqqcaaaaaaaaaaaaaaaaaa
+cdaaaaeaacccaaaaaaadaacaaadcccccccccccccccaaaaaaaaaaaaaaaaaa
+caaaaaaaaaacdaaaaaaaaacdaaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+caadaaadaaacccaafaaaaacaacccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+caaaaaaaaaacaccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cllllllllllcaaaaaaaaaacccccccsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -75,5 +74,10 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 "}
