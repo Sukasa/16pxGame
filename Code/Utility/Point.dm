@@ -32,6 +32,8 @@ Point/New(var/atom/Ref)
 		PixelY += Ref:SubStepY
 		SubStepY = Ref:SubStepX
 		SubStepX = Ref:SubStepY
+		PixelX += Ref:bound_x + (Ref:bound_width / 2)
+		PixelY += Ref:bound_y + (Ref:bound_height / 2)
 
 	FineX = (TileX * world.icon_size) + PixelX
 	FineY = (TileY * world.icon_size) + PixelY
