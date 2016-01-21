@@ -7,7 +7,7 @@
 	Cross(var/atom/movable/AM)
 		. = ..()
 		if (AM.Above(src))
-			if (ismob(AM))
+			if (ismob(AM) && GetFineY() < AM.GetFineY())
 				var/obj/Effect/WaterSplash/W = new(src.loc)
 				W.step_x = AM.step_x + (world.icon_size * (AM.x - x))
 			AM:Underwater = TRUE
@@ -15,7 +15,7 @@
 	Uncrossed(var/atom/movable/AM)
 		. = ..()
 		if (AM.Above(src))
-			if (ismob(AM))
+			if (ismob(AM) && GetFineY() < AM.GetFineY())
 				var/obj/Effect/WaterSplash/W = new(src.loc)
 				W.step_x = AM.step_x + (world.icon_size * (AM.x - x))
 			AM:Underwater = FALSE
