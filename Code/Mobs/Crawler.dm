@@ -3,6 +3,7 @@
 	icon = 'Crawler.dmi'
 	icon_state = "Crawler"
 	pixel_x = -1
+	NoGooBounce = TRUE
 
 	bound_height = 8
 	bound_width = 28

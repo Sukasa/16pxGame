@@ -34,6 +34,7 @@
 #include "Code\Objects\Brick.dm"
 #include "Code\Objects\Bubble.dm"
 #include "Code\Objects\Checkpoint.dm"
+#include "Code\Objects\GooBlock.dm"
 #include "Code\Objects\JumpSparkle.dm"
 #include "Code\Objects\Platform.dm"
 #include "Code\Objects\PlayerStart.dm"

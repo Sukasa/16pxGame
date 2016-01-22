@@ -5,6 +5,7 @@
 		Grounded = FALSE
 		StickyPlatform = FALSE
 		DoesRide = TRUE
+		NoGooBounce = FALSE
 
 		tmp
 			BubbleCooldown = 60
