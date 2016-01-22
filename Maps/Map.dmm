@@ -12,12 +12,12 @@
 "l" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
 "m" = (/obj/PlayerStart,/turf,/area)
 "n" = (/obj/Platform,/turf,/area)
-"o" = (/obj/GooBlock,/turf,/area)
-"p" = (/obj/Platform,/mob/Crawler,/turf,/area)
-"q" = (/obj/Water/Surface,/turf,/area)
-"r" = (/obj/Water,/turf,/area)
-"s" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
-"t" = (/obj/Brick,/obj/Brick,/turf,/area)
+"o" = (/obj/Platform,/mob/Crawler,/turf,/area)
+"p" = (/obj/Water/Surface,/turf,/area)
+"q" = (/obj/Water,/turf,/area)
+"r" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
+"s" = (/obj/Brick,/obj/Brick,/turf,/area)
+"t" = (/obj/GooBlock,/turf,/area)
 "u" = (/obj/Hazard/Spikes,/turf,/area)
 
 (1,1,1) = {"
@@ -38,18 +38,18 @@ aaaaaaaaaaaacccaaaaahhhhaaaaaaaahhhhaaaaacccaaaaaaaaaaaaaaaa
 aaaaaaaaaaaacccdaaaaaeaaaeaaaaeaaaeaaaaadccaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaciaaaaeaaaaaaaaaaaaaaaaaaeajaakaaaaaaaaaaaaaaaaa
 llllllllllllciaaaaaaaaaaaamaaaaaaaaaaaaaaakaaaaaaaaaaaaaaaaa
-caaaaaaaacccccccccccadaacccnncoooadacccccccaaaaaaaaaaaaaaaaa
+caaaaaaaacccccccccccadaacccnncccaadacccccccaaaaaaaaaaaaaaaaa
 caaaeaacaaaaaaaaaaaaaaaaaaannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-caaaaadcaeeeefaaaaaaaacaaeanpaeaacqqqqqqqcaaaaaaaaaaaaaaaaaa
-caeaaaacccccccaaaaaaadcllllllllllcrrrrrrrcaaaaaaaaaaaaaaaaaa
-caadaaaaaaaaacaaaaaaaacaaaaaaaaaacrsrrrsrcaaaaaaaaaaaaaaaaaa
-caaaaaaaacccccaaaaaadacaaaacqcccccrrrsrrrcaaaaaaaaaaaaaaaaaa
-ceaadaaaaaaaaaaaaaaaaacaaaacrrrrrrrrrrrrrcaaaaaaaaaaaaaaaaaa
+caaaaadcaeeeefaaaaaaaacaaeanoaeaacpppppppchaaaaaaaaaaaaaaaaa
+caeaaaacccccccaaaaaaadcllllllllllcqqqqqqqcaaaaaaaaaaaaaaaaaa
+caadaaaaaaaaacaaaaaaaacaaaaaaaaaacqrqqqrqcaaaaaaaaaaaaaaaaaa
+caaaaaaaacccccaaaaaadacaaaacpcccccqqqrqqqcaaaaaaaaaaaaaaaaaa
+ceaadaaaaaaaaaaaaaaaaacaaaacqqqqqqqqqqqqqcaaaaaaaaaaaaaaaaaa
 cdaaaaeaacccaaaaaaadaacaaadcccccccccccccccaaaaaaaaaaaaaaaaaa
 caaaaaaaaaacdaaaaaaaaacdaaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 caadaaadaaacccaafaaaaacaacccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 caaaaaaaaaacaccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-cllllllllllcaaaaaaaaaaccccccctooooaaaaaaaaaaaaaaaaaaaaaaaaaa
+cllllllllllcaaaaaaaaaacccccccsttttaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

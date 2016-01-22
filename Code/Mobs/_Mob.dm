@@ -10,6 +10,7 @@
 		tmp
 			BubbleCooldown = 60
 			MoveY = FALSE
+			Gooped = FALSE
 
 		const
 			Gravity = 0.6

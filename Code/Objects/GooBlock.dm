@@ -9,7 +9,7 @@
 
 		const
 			Force = 1
-			Slowdown = 5
+			Slowdown = 6
 
 	Cross(var/atom/movable/AM)
 		if (ismob(AM) && AM:NoGooBounce)
@@ -20,36 +20,35 @@
 	Crossed(var/atom/movable/AM)
 		if (ismob(AM))
 			Affecting += AM
+			AM:Gooped++
 
 	Uncrossed(var/atom/movable/AM)
 		if (ismob(AM))
 			Affecting -= AM
+			AM:Gooped--
 
 	Tick()
 		for(var/x = Affecting.len; x >= 1; x--)
 			var/mob/M = Affecting[x]
-			if (!(M in loc))
-				Affecting -= M
+
+			if ((locate(/obj/GooBlock) in M.loc) != src)
 				continue
 
-			// Figure out how strongly to repel the mob, and in what direction
-			var/dX = M.GetCenterX() - GetCenterX()
-			var/dY = M.GetCenterY() - GetCenterY()
+			if (GetFootPosY(M) < GetSolidPosY())
+				M.MoveBy(0, GetSolidPosY() - GetFootPosY(M))
+				M.YVelocity = 0
 
-			// Apply repulsion
-			var/XS = sign(M.XVelocity)
-			var/YS = sign(M.YVelocity)
+			M.YVelocity *= 0.2
+			M.YVelocity += 0.5
+			M.XVelocity *= 0.2
 
-			if (XS == sign(dX))
-				M.XVelocity += ((world.icon_size / 2) - abs(dX)) / world.icon_size * Force * 2 * sign(dX)
-			else
-				M.XVelocity += ((world.icon_size / 2) - abs(dX)) / world.icon_size * Slowdown * 2 * sign(dX)
-
-			if (YS == sign(dY))
-				M.YVelocity += ((world.icon_size / 2) - abs(dY)) / world.icon_size * Force * 4 * sign(dY)
-			else
-				M.YVelocity += ((world.icon_size / 2) - abs(dY)) / world.icon_size * Slowdown * 4 * sign(dY)
-
-			// Mark mobs as grounded if they're above the goo
 			if (M.GetFineY() > GetFineY())
 				M.Grounded = TRUE
+
+	proc
+
+		GetSolidPosY()
+			return GetFineY() + 16
+
+		GetFootPosY(var/mob/M)
+			return M.GetFineY() + M.bound_y

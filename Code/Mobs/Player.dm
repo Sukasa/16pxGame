@@ -102,6 +102,8 @@
 		if (Grounded || Force || Underwater)
 			YVelocity = max(YVelocity, 0)
 			YVelocity += JumpSpeed
+			if (Gooped && YVelocity > 6)
+				YVelocity = 6
 			return TRUE
 		return FALSE
 
