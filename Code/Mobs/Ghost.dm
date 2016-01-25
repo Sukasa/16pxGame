@@ -15,9 +15,12 @@
 		const
 			Speed = 1
 
-
 	GetGravityModifier()
 		return 0
+
+	Crossed(var/atom/movable/AM)
+		if (isplayer(AM))
+			AM:Damage(src)
 
 	Tick()
 		var/TargetPlayer = null
