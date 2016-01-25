@@ -6,6 +6,7 @@
 		StickyPlatform = FALSE
 		DoesRide = TRUE
 		NoGooBounce = FALSE
+		NoBreathe = FALSE
 
 		tmp
 			BubbleCooldown = 60
@@ -74,7 +75,7 @@
 		. = ..()
 
 		// If underwater, emit a bubble on occasion
-		if (Underwater)
+		if (Underwater && !NoBreathe)
 			if (BubbleCooldown > 0)
 				BubbleCooldown--
 			else

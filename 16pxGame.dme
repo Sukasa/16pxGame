@@ -28,6 +28,7 @@
 #include "Code\Mobs\Eagle.dm"
 #include "Code\Mobs\FlierHorizontal.dm"
 #include "Code\Mobs\FlierVertical.dm"
+#include "Code\Mobs\Ghost.dm"
 #include "Code\Mobs\Player.dm"
 #include "Code\Objects\_Object.dm"
 #include "Code\Objects\AcidBlock.dm"
@@ -55,6 +56,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\Map.dmm"
+#include "Maps\DebugMap.dmm"
 // END_INCLUDE
 
