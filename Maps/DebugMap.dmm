@@ -1,26 +1,28 @@
 "a" = (/turf,/area)
 "b" = (/mob/Eagle,/turf,/area)
 "c" = (/obj/Collectible/Emerald,/turf,/area)
-"d" = (/obj/Brick,/turf,/area)
+"d" = (/obj/BrickTop,/turf,/area)
 "e" = (/obj/GooBlock,/turf,/area)
 "f" = (/obj/Sparkle,/turf,/area)
 "g" = (/obj/Checkpoint,/turf,/area)
 "h" = (/mob/FlierHorizontal{step_x = 17},/turf,/area)
-"i" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
-"j" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
-"k" = (/mob/FlierVertical,/turf,/area)
-"l" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
-"m" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
-"n" = (/obj/PlayerStart,/turf,/area)
-"o" = (/obj/Platform,/turf,/area)
-"p" = (/obj/Platform,/mob/Crawler,/turf,/area)
-"q" = (/obj/Water/Surface,/turf,/area)
-"r" = (/obj/Water,/turf,/area)
-"s" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
-"t" = (/obj/SwitchBlock,/turf,/area)
-"u" = (/obj/ToggleBlock,/turf,/area)
-"v" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
-"w" = (/obj/Hazard/Spikes,/turf,/area)
+"i" = (/obj/Brick,/turf,/area)
+"j" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
+"k" = (/mob/Crawler,/turf,/area)
+"l" = (/obj/SwitchBlock,/turf,/area)
+"m" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
+"n" = (/mob/FlierVertical,/turf,/area)
+"o" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
+"p" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
+"q" = (/obj/PlayerStart,/turf,/area)
+"r" = (/obj/Platform,/turf,/area)
+"s" = (/obj/Platform,/mob/Crawler,/turf,/area)
+"t" = (/obj/Water/Surface,/turf,/area)
+"u" = (/obj/Water,/turf,/area)
+"v" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
+"w" = (/obj/ToggleBlock,/turf,/area)
+"x" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
+"y" = (/obj/Hazard/Spikes,/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -35,23 +37,23 @@ aaaaaaaaaaaaaaaaaaadddaeaeadddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddfdaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaacaaaaaaaccaaaaaaaaaaafaaaaaaacdaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaagahaaaaaaaaaaaaaaaaaddaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadddaaaaaiiiiaaaaaaaaiiiiaaaaadddaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadddfaaaaacaaacaaaacaaacaaaaafddaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaadjaaaacaaaaaaaaaaaaaaaaaacakaalaaaaaaaaaaaaaaaaa
-mmmmmmmmmmmmdjaaaaaaaaaaaanaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaa
-daaaaaaaadddddddddddaaaadddoodddaafadddddddaaaaaaaaaaaaaaaaa
-daaacaadaaaaaaaaaaaaaaaaaaaooaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaafdaccccgaaaaaaaadaacaopacaadqqqqqqqdiaaaaaaaaaaaaaaaaa
-dacaaaadddddddaaaaaaafdmmmmmmmmmmdrrrrrrrdaaaaaaaaaaaaaaaaaa
-daafaaaaaaaaadaaaaaaaadaaaaaaaaaadrsrrrsrdaaaaaaaaaaaaaaaaaa
-daaaaaaaadddddaaaaaaaadaaaadqdddddrrrsrrrdaaaaaaaaaaaaaaaaaa
-dcaafaaaaaaaaaaaaaaaaadaaaadrrrrrrrrrrrrrdaaaaaaaaaaaaaaaaaa
-dfaaaacaadddaaaaaaaaafdaaafdddddddddddddddaaaaaaaaaaaaaaaaaa
-daaaaaaaaaadfaaaaaaaaadfaaadataataaaaaaaaaaaaaaaaaaaaaaaaaaa
-daafaaafaaadddaagaaaaadaadddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-daaaaaaaaaadaddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-dmmmmmmmmmmdaaaaauuuuudddddvvauuavvadddddaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaagahaaaaaaaaaaaaaaaaadiaaaaaaaaaaaaaaaa
+aaaaaaaaaaaadddaaaaajjjjaaikiaaajjjjaaaaadiiaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaiiifaaaaacaaaciliacaaacaaaaafiiaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaimaaaacaaaaaaaaaaaaaaaaaacanaaoaaaaaaaaaaaaaaaaa
+ppppppppppppimaaaaaaaaaaaaqaaaaaaaaaaaaaaaoaaaaaaaaaaaaaaaaa
+iaaaaaaaaiiiidddddddaaaadddrrdddaafadddddddaaaaaaaaaaaaaaaaa
+iaaacaadaaaaaaaaaaaaaaaaaaarraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+iaaaaafiaccccgaaaaaaaadaacarsacaaitttttttijaaaaaaaaaaaaaaaaa
+iacaaaaiddddddaaaaaaafippppppppppiuuuuuuuiaaaaaaaaaaaaaaaaaa
+iaafaaaaaaaaaiaaaaaaaaiaaaaaaaaaaiuvuuuvuiaaaaaaaaaaaaaaaaaa
+iaaaaaaaaddddiaaaaaaaaiaaaadtddddiuuuvuuuiaaaaaaaaaaaaaaaaaa
+icaafaaaaaaaaaaaaaaaaaiaaaaiuuuuuuuuuuuuuiaaaaaaaaaaaaaaaaaa
+ifaaaacaadddaaaaaaaaafiaaafiiiiiiiiiiiiiiiaaaaaaaaaaaaaaaaaa
+iaaaaaaaaaaifaaaaaaaaaifaaaialaalaaaaaaaaaaaaaaaaaaaaaaaaaaa
+iaafaaafaaaiddaagaaaaaiaaiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+iaaaaaaaaaaiaiddddddddiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ippppppppppiaaaaawwwwwiddddxxawwaxxadddddaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -82,5 +84,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 "}
