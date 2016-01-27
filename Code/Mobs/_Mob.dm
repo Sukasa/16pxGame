@@ -72,8 +72,8 @@
 	Tick()
 		. = ..()
 
-		if (!Alive && x <= 1)
-			loc = null
+		//if (!Alive && x <= 1)
+			//loc = null
 
 		// If underwater, emit a bubble on occasion
 		if (Underwater && !NoBreathe)
@@ -145,4 +145,5 @@
 
 		Riders = list( )
 		MoveY = FALSE
+
 

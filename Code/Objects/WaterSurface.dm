@@ -5,7 +5,7 @@
 	bound_height = 24
 
 	Cross(var/atom/movable/AM)
-		. = ..()
+		. = ..(AM)
 		if (AM.Above(src))
 			if (ismob(AM) && AM.density && GetFineY() < AM.GetFineY())
 				var/obj/Effect/WaterSplash/W = new(src.loc)
@@ -13,7 +13,7 @@
 			AM:Underwater = TRUE
 
 	Uncrossed(var/atom/movable/AM)
-		. = ..()
+		. = ..(AM)
 		if (AM.Above(src))
 			if (ismob(AM) && AM.density && GetFineY() < AM.GetFineY())
 				var/obj/Effect/WaterSplash/W = new(src.loc)

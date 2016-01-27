@@ -11,6 +11,7 @@
 	bound_height = 24
 
 	Crossed(atom/movable/AM)
+		. = ..(AM)
 		if (ismob(AM) && !invisibility)
 			if (AM:Jump(TRUE))
 				invisibility = 120

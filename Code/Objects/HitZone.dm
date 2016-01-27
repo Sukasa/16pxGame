@@ -38,11 +38,3 @@
 				for(var/atom/movable/AM in T)
 					if (Overlaps(AM))
 						CallBackObj.HitZoneCallback(AM)
-
-		// Determines if the HZ is overlapping anything
-		Overlaps(atom/movable/AM)
-			. = TRUE
-			. = . && (GetFineX() + bound_x < AM.GetFineX() + AM.bound_x + AM.bound_width)
-			. = . && (GetFineX() + bound_x + bound_width > AM.GetFineX() + AM.bound_x)
-			. = . && (GetFineY() + bound_y < AM.GetFineY() + AM.bound_y + AM.bound_height)
-			. = . && (GetFineY() + bound_y + bound_height > AM.GetFineY() + AM.bound_y)

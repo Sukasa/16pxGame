@@ -5,20 +5,20 @@
 	icon = 'Eagle.dmi'
 	icon_state = "Eagle"
 
-	bound_x = 4
-	bound_width = 24
-	bound_height = 24
+	bound_x = 12
+	bound_width = 8
+	bound_height = 16
+	bound_y = 2
 
 	var
 		Period = 4
-		SwoopPeriod = 1.5
+		SwoopPeriod = 1.7
 		Speed = 4
 		AttackRangeY = 192
-		AttackRangeX = 64
+		AttackRangeX = 108
 		tmp
 			State = 0
 			ActivePeriod = 0
-			list/Crossing = list( )
 			OriginalY = 0
 			SwoopStart = 0
 			Cooldown = 0
@@ -30,18 +30,8 @@
 		return 0
 
 	New()
+		..()
 		ActivePeriod = Period * world.fps
-
-	Crossed(atom/movable/AM)
-		if (AM == Target && State == 1 && !Grabbed)
-			Grabbed = AM
-			SwoopStart = Age
-			SwoopStart -= SwoopPeriod * world.fps
-			SwoopPeriod *= 2
-			SwoopSpeed /= 2
-
-	CrossedBy(atom/movable/AM)
-		Crossed(AM)
 
 	Tick()
 		ActivePeriod--
@@ -60,7 +50,7 @@
 						State = 1
 						OriginalY = GetFineY()
 						SwoopStart = Age
-						SwoopSpeed = (-(GetFineY() - (P.GetFineY() - 24)) / (world.fps * SwoopPeriod * 0.5)) * sqrt(2)
+						SwoopSpeed = (-(GetFineY() - (P.GetFineY())) / (world.fps * SwoopPeriod * 0.5)) * sqrt(2)
 						Target = P
 			else
 				Cooldown--
@@ -77,10 +67,18 @@
 				Grabbed.XVelocity = XVelocity
 				Grabbed.YVelocity = YVelocity
 
+			if (Overlaps(Target) && State == 1 && !Grabbed)
+				Grabbed = Target
+				SwoopStart = Age
+				SwoopStart -= SwoopPeriod * world.fps
+				SwoopPeriod *= 2
+				SwoopSpeed /= 2
+
 			YVelocity = sin(360 * (Age - SwoopStart) / (SwoopPeriod * world.fps)) * SwoopSpeed
 
 		else // Return to original Y
 			YVelocity = OriginalY - GetFineY()
+			Grabbed = null
 
 			if (YVelocity < -4.6)
 				YVelocity = -4.6

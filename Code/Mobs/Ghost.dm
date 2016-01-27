@@ -19,6 +19,7 @@
 		return 0
 
 	Crossed(var/atom/movable/AM)
+		. = ..(AM)
 		if (isplayer(AM))
 			AM:Damage(src)
 

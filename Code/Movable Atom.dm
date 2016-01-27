@@ -6,15 +6,15 @@
 		SmoothMove = 0
 		Underwater = FALSE
 
-	Crossed(atom/movable/AM)
-		. = ..()
-		CrossedBy(AM)
+	Crossed(var/atom/movable/AM)
+		. = ..(AM)
+		AM.CrossedOver(src)
 
 	proc
 		HitZoneCallback(var/atom/movable/AM)
 			return
 
-		CrossedBy(atom/movable/AM)
+		CrossedOver(atom/movable/AM)
 			return
 
 		Bumped (var/atom/movable/AM)
@@ -65,3 +65,13 @@
 
 		RightOf(atom/movable/Ref, Fudge)
 			return GetFineX() + bound_x + Fudge >= Ref.GetFineX() + Ref.bound_width + Ref.bound_x
+
+
+
+		// Determines if the atom is overlapping anything
+		Overlaps(atom/movable/AM)
+			. = TRUE
+			. = . && (GetFineX() + bound_x < AM.GetFineX() + AM.bound_x + AM.bound_width)
+			. = . && (GetFineX() + bound_x + bound_width > AM.GetFineX() + AM.bound_x)
+			. = . && (GetFineY() + bound_y < AM.GetFineY() + AM.bound_y + AM.bound_height)
+			. = . && (GetFineY() + bound_y + bound_height > AM.GetFineY() + AM.bound_y)

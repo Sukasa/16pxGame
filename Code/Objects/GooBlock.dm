@@ -12,10 +12,9 @@
 			Slowdown = 6
 
 	Cross(var/atom/movable/AM)
+		. = ..()
 		if (ismob(AM) && AM:NoGooBounce)
 			return 0
-
-		. = ..()
 
 	Crossed(var/atom/movable/AM)
 		if (ismob(AM))
@@ -31,16 +30,20 @@
 		for(var/x = Affecting.len; x >= 1; x--)
 			var/mob/M = Affecting[x]
 
-			if ((locate(/obj/GooBlock) in M.loc) != src)
+			var/obj/GooBlock/Other = locate(/obj/GooBlock) in M.loc
+			if (Other && Other != src)
 				continue
 
 			if (GetFootPosY(M) < GetSolidPosY())
 				M.MoveBy(0, GetSolidPosY() - GetFootPosY(M))
 				M.YVelocity = 0
 
+			if (GetFootPosY(M) < GetSolidPosY() + 3)
+				M.XVelocity = 0
+
 			M.YVelocity *= 0.2
 			M.YVelocity += 0.5
-			M.XVelocity *= 0.2
+			M.XVelocity *= 0.5
 
 			if (M.GetFineY() > GetFineY())
 				M.Grounded = TRUE
