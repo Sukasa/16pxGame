@@ -1,25 +1,28 @@
 "a" = (/turf,/area)
 "b" = (/mob/Eagle,/turf,/area)
-"c" = (/obj/Brick,/turf,/area)
+"c" = (/obj/BrickTop,/turf,/area)
 "d" = (/obj/Sparkle,/turf,/area)
 "e" = (/obj/Collectible/Emerald,/turf,/area)
 "f" = (/obj/Checkpoint,/turf,/area)
 "g" = (/mob/FlierHorizontal{step_x = 17},/turf,/area)
-"h" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
-"i" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
-"j" = (/mob/FlierVertical,/turf,/area)
-"k" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
-"l" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
-"m" = (/obj/PlayerStart,/turf,/area)
-"n" = (/obj/Platform,/turf,/area)
-"o" = (/obj/Platform,/mob/Crawler,/turf,/area)
-"p" = (/obj/Water/Surface,/turf,/area)
-"q" = (/obj/Water,/turf,/area)
-"r" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
-"s" = (/obj/SwitchBlock,/turf,/area)
-"t" = (/obj/ToggleBlock,/turf,/area)
-"u" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
-"v" = (/obj/Hazard/Spikes,/turf,/area)
+"h" = (/obj/Brick,/turf,/area)
+"i" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
+"j" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
+"k" = (/mob/FlierVertical,/turf,/area)
+"l" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
+"m" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
+"n" = (/obj/PlayerStart,/turf,/area)
+"o" = (/obj/Platform,/turf,/area)
+"p" = (/obj/Platform,/mob/Crawler,/turf,/area)
+"q" = (/obj/Water/Surface,/turf,/area)
+"r" = (/obj/Water,/turf,/area)
+"s" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
+"t" = (/obj/SwitchBlock,/turf,/area)
+"u" = (/obj/ToggleBlock,/turf,/area)
+"v" = (/obj/BrickTop{step_x = 0},/turf,/area)
+"w" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
+"x" = (/obj/BrickTop{step_x = 1},/turf,/area)
+"y" = (/obj/Hazard/Spikes,/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -34,23 +37,23 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccdcaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaeaaaaaaaeeaaaaaaaaaaadaaaaaaaecaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaafagaaaaaaaaaaaaaaaaaccaaaaaaaaaaaaaaaa
-aaaaaaaaaaaacccaaaaahhhhaaaaaaaahhhhaaaaacccaaaaaaaaaaaaaaaa
-aaaaaaaaaaaacccdaaaaaeaaaeaaaaeaaaeaaaaadccaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaciaaaaeaaaaaaaaaaaaaaaaaaeajaakaaaaaaaaaaaaaaaaa
-llllllllllllciaaaaaaaaaaaamaaaaaaaaaaaaaaakaaaaaaaaaaaaaaaaa
-caaaaaaaacccccccccccaaaacccnncccaadacccccccaaaaaaaaaaaaaaaaa
-caaaeaacaaaaaaaaaaaaaaaaaaannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-caaaaadcaeeeefaaaaaaaacaaeanoaeaacpppppppchaaaaaaaaaaaaaaaaa
-caeaaaacccccccaaaaaaadcllllllllllcqqqqqqqcaaaaaaaaaaaaaaaaaa
-caadaaaaaaaaacaaaaaaaacaaaaaaaaaacqrqqqrqcaaaaaaaaaaaaaaaaaa
-caaaaaaaacccccaaaaaaaacaaaacpcccccqqqrqqqcaaaaaaaaaaaaaaaaaa
-ceaadaaaaaaaaaaaaaaaaacaaaacqqqqqqqqqqqqqcaaaaaaaaaaaaaaaaaa
-cdaaaaeaacccaaaaaaaaadcaaadcccccccccccccccaaaaaaaaaaaaaaaaaa
-caaaaaaaaaacdaaaaaaaaacdaaacasaasaaaaaaaaaaaaaaaaaaaaaaaaaaa
-caadaaadaaacccaafaaaaacaacccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-caaaaaaaaaacaccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-cllllllllllcaaaaatttttcccccuuattauuacccccaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaafagaaaaaaaaaaaaaaaaachaaaaaaaaaaaaaaaa
+aaaaaaaaaaaacccaaaaaiiiiaaaaaaaaiiiiaaaaachhaaaaaaaaaaaaaaaa
+aaaaaaaaaaaahhhdaaaaaeaaaeaaaaeaaaeaaaaadhhaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaahjaaaaeaaaaaaaaaaaaaaaaaaeakaalaaaaaaaaaaaaaaaaa
+mmmmmmmmmmmmhjaaaaaaaaaaaanaaaaaaaaaaaaaaalaaaaaaaaaaaaaaaaa
+haaaaaaaahhhhcccccccaaaacccoocccaadacccccccaaaaaaaaaaaaaaaaa
+haaaeaacaaaaaaaaaaaaaaaaaaaooaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+haaaaadhaeeeefaaaaaaaacaaeaopaeaacqqqqqqqciaaaaaaaaaaaaaaaaa
+haeaaaahccccccaaaaaaadhmmmmmmmmmmhrrrrrrrhaaaaaaaaaaaaaaaaaa
+haadaaaaaaaaahaaaaaaaahaaaaaaaaaahrsrrrsrhaaaaaaaaaaaaaaaaaa
+haaaaaaaacccchaaaaaaaahaaaacqcccchrrrsrrrhaaaaaaaaaaaaaaaaaa
+heaadaaaaaaaaaaaaaaaaahaaaahrrrrrrrrrrrrrhaaaaaaaaaaaaaaaaaa
+hdaaaaeaacccaaaaaaaaadhaaadhhhhhhhhhhhhhhhaaaaaaaaaaaaaaaaaa
+haaaaaaaaaahdaaaaaaaaahdaaahataataaaaaaaaaaaaaaaaaaaaaaaaaaa
+haadaaadaaahccaafaaaaahaacchaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+haaaaaaaaaahahcccccccchaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+hmmmmmmmmmmhaaaaauuuuuhvvvvwwauuawwaxxxxxaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -81,5 +84,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 "}
