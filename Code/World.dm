@@ -2,7 +2,7 @@ world
 	hub = ""
 	hub_password = ""
 	visibility = 0
-	name = "16 px Game"
+	name = "16px Game"
 	icon_size = 32
 	map_format = TOPDOWN_MAP
 	fps = 30
