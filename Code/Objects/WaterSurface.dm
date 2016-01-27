@@ -4,9 +4,9 @@
 	color = rgb(255, 255, 255, 255)
 	bound_height = 24
 
-	Cross(var/atom/movable/AM)
+	Crossed(var/atom/movable/AM)
 		. = ..(AM)
-		if (AM.Above(src))
+		if (!Above(AM))
 			if (ismob(AM) && AM.density && GetFineY() < AM.GetFineY())
 				var/obj/Effect/WaterSplash/W = new(src.loc)
 				W.step_x = AM.step_x + (world.icon_size * (AM.x - x))
