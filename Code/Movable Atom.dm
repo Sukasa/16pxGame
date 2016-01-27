@@ -6,8 +6,18 @@
 		SmoothMove = 0
 		Underwater = FALSE
 
+	Crossed(atom/movable/AM)
+		. = ..()
+		CrossedBy(AM)
+
 	proc
-		Bumped (atom/movable/AM)
+		HitZoneCallback(var/atom/movable/AM)
+			return
+
+		CrossedBy(atom/movable/AM)
+			return
+
+		Bumped (var/atom/movable/AM)
 			return
 
 		GetFineX()

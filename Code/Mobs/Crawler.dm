@@ -17,14 +17,20 @@
 
 		..()
 
+		if (!Alive)
+			return
+
 		if (XVelocity == 0) // If we hit an obstacle, turn around and go the other direction
 			Speed = 0 - Speed
 			var/matrix/M = transform || matrix() // Flip the sprite
 			transform = M.Scale(-1, 1)
 
 	Damage(atom/movable/AM)
-		if (ismob(AM))
+		if (!istype(AM, /obj/Hazard))
 			Die()
+
+			return TRUE
+		return FALSE
 
 	Bump(atom/movable/AM)
 		. = ..()

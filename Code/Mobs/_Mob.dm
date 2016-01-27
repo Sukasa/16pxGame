@@ -7,6 +7,7 @@
 		DoesRide = TRUE
 		NoGooBounce = FALSE
 		NoBreathe = FALSE
+		Alive = TRUE
 
 		tmp
 			BubbleCooldown = 60
@@ -27,29 +28,26 @@
 			return 1
 
 		Damage(atom/movable/DamageSource)
-			return
+			return FALSE
 
 		Spawn()
 			return
 
 		Die()
-			loc = null
+			density = 0
+			Alive = FALSE
+
+			var/matrix/Mx = transform || matrix()
+			transform = Mx.Scale(1, -1)
+			pixel_y -= (bound_y + bound_height)
+
 			Riders = list( )
 			for(var/mob/M in Riding)
 				M.Riders -= src
 			Riding = list( )
-			return
 
 		Jump(var/force = 0)
 			return FALSE
-
-		CrossedBy(var/mob/M)
-			return FALSE
-
-	Crossed(var/atom/A)
-		if (ismob(A))
-			A:CrossedBy(src)
-		..(A)
 
 	New()
 		. = ..()
@@ -73,6 +71,9 @@
 
 	Tick()
 		. = ..()
+
+		if (!Alive && x <= 1)
+			loc = null
 
 		// If underwater, emit a bubble on occasion
 		if (Underwater && !NoBreathe)

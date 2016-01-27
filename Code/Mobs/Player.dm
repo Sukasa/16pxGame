@@ -88,20 +88,17 @@
 		if (Stun)
 			XVelocity = 0
 			YVelocity = 0
-
 		if (MoveStun > 0)
 			MoveStun--
-
 		if (Stun > 0)
 			Stun--
-
 
 		..()
 
 	Jump(var/Force = 0)
 		if (Grounded || Force || Underwater)
 			YVelocity = max(YVelocity, 0)
-			YVelocity += JumpSpeed
+			YVelocity += JumpSpeed * max(Grounded, Force, Underwater)
 			if (Gooped && YVelocity > 6)
 				YVelocity = 6
 			return TRUE
@@ -115,12 +112,18 @@
 				Die()
 			else
 				Invincibility = world.fps * MercyInvincibilityPeriod
+			return TRUE
+		return FALSE
 
 	Die()
 		..()
 		Spawn()
 
 	Spawn()
+		density = 1
+		transform = matrix()
+		pixel_y = 0
+		Alive = TRUE
 		Move(get_turf(SpawnLocation), 0, 0)
 		XVelocity = 0
 		YVelocity = 0

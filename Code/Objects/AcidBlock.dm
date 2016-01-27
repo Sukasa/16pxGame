@@ -7,7 +7,6 @@
 	var
 		Cooldown = 0
 
-
 	proc
 		SpawnBubble()
 			Cooldown = rand() * 1.1 * world.fps
@@ -17,11 +16,6 @@
 				M.step_x = rand(-14,14)
 				M.pixel_y = -6
 				M.Life = rand(11,23)
-
-
-		//Spawn()
-			//SpawnBubble()
-			//. = ..()
 
 	Tick()
 		Cooldown -= 1
