@@ -2,7 +2,12 @@ world
 	New()
 		..()
 		spawn
+			var/obj/AtomProcs = new()
+
 			while (TRUE)
+
+				// Handle the on/off timer
+				AtomProcs.DoOnOff()
 
 				// Tick all entities
 				for(var/atom/A)

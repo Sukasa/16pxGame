@@ -1,10 +1,25 @@
 atom
-	var
-		Age
-		DamageValue = 1
 	mouse_opacity = 0
 
+	var
+		Age = 0
+		DamageValue = 1
+
+		global
+			OnOffTimer = 0
+			OnOffTick = FALSE
+			OnOffValue = FALSE
+
 	proc
+		// Handle the "On / Off" state logic that some blocks may end up using
+		DoOnOff()
+			OnOffTick = FALSE
+			if (OnOffTimer)
+				OnOffTimer--
+				if (!OnOffTimer)
+					OnOffTick = TRUE
+					OnOffValue = !OnOffValue
+
 		// Returns the angle to the passed atom, where 0° is due north
 		GetAngleTo(var/atom/To)
 			var/Point/P = new(src)
