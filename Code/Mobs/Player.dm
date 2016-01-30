@@ -1,11 +1,12 @@
 /mob/Player
-	icon = 'Player.dmi'
-	icon_state = "Player"
+	icon = 'NeoPlayer.dmi'
+	icon_state = "Stand"
+	dir = EAST
 
-	bound_x = 4
+	bound_x = 12
 	bound_y = 0
-	bound_width = 24
-	bound_height = 24
+	bound_width = 10
+	bound_height = 20
 
 	var
 		atom/SpawnLocation
@@ -16,14 +17,23 @@
 			Stun = FALSE
 			MoveStun = FALSE
 			Invincibility = 0
+			LastValidDir = EAST
+			LastWasRiding = 0
 
 		const
 			MaxAccel = 1.2
 			MaxDecel = 1.3
-			JumpSpeed = 8.9
+			JumpSpeed = 9.4
 			MaxSpeed = 6
 			MaxHealth = 2
 			MercyInvincibilityPeriod = 1.25
+
+			AnimHintStand = 1
+			AnimHintRise  = 2
+			AnimHintFall  = 4
+			AnimHintWalk  = 8
+			AnimHintSwim  = 16
+
 
 	New()
 		..()
@@ -36,25 +46,52 @@
 			return 0
 		return 1
 
+	proc/SetAnimGroup(bits)
+		if(      0 != (bits & AnimHintSwim) )
+			icon_state = "Swim"
+
+		else if( 0 != (bits & AnimHintRise) )
+			icon_state = "Rise"
+
+		else if( 0 != (bits & AnimHintFall) )
+			icon_state = "Fall"
+
+		else if( 0 != (bits & AnimHintWalk) )
+			icon_state = "Walk"
+
+		else
+			icon_state = "Stand"
+
+
 	Tick()
+		var/AnimBits = 0
+
 		if (!client) // If the client disconnected, twiddle thumbs
 			return;
 
-		if (!Stun && client.ButtonDown("East")) // Go right
-			XVelocity = min(XVelocity + MaxAccel, MaxSpeed)
-			if (XVelocity < 0)
-				XVelocity += MaxDecel
-				if (XVelocity > 0)
-					XVelocity = 0
+		if( client.ButtonDown("East") )
+			AnimBits |= AnimHintWalk
 
-		else if (!Stun && client.ButtonDown("West")) // Go left
-			XVelocity = max(XVelocity - MaxAccel, -MaxSpeed)
-			if (XVelocity > 0)
-				XVelocity -= MaxDecel
+			if (!Stun) // Go right
+				XVelocity = min(XVelocity + MaxAccel, MaxSpeed)
 				if (XVelocity < 0)
-					XVelocity = 0
+					XVelocity += MaxDecel
+					if (XVelocity > 0)
+						XVelocity = 0
+
+		else if( client.ButtonDown("West") )
+			AnimBits |= AnimHintWalk
+
+			if (!Stun) // Go left
+				XVelocity = max(XVelocity - MaxAccel, -MaxSpeed)
+				if (XVelocity > 0)
+					XVelocity -= MaxDecel
+					if (XVelocity < 0)
+						XVelocity = 0
 
 		else // Come to a halt
+			AnimBits |= AnimHintStand
+
 			if (Grounded)
 				XVelocity = round(XVelocity * 0.4, 0.1)
 			else
@@ -68,6 +105,8 @@
 				YVelocity = 4.5
 
 		if (Underwater)
+			AnimBits |= AnimHintSwim
+
 			XVelocity = min(abs(XVelocity), 7) * sign(XVelocity)
 			if (YVelocity < -3)
 				YVelocity = -3
@@ -94,6 +133,25 @@
 			Stun--
 
 		..()
+
+		if( YVelocity > 0 )
+			AnimBits |= AnimHintRise
+		else if( YVelocity < 0 && ! Riding.len && ! LastWasRiding )
+			AnimBits |= AnimHintFall
+
+		LastWasRiding = Riding.len
+
+		if( XVelocity == 0 )
+			dir = LastValidDir
+
+		else
+			if( XVelocity < 0 )
+				dir = WEST
+			else if( XVelocity > 0 )
+				dir = EAST
+			LastValidDir = dir
+
+		SetAnimGroup(AnimBits)
 
 	Jump(var/Force = 0)
 		if (Grounded || Force || Underwater)
