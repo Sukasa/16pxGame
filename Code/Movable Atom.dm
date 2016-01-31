@@ -5,6 +5,7 @@
 		SubStepY = 0
 		SmoothMove = 0
 		Underwater = FALSE
+		CanRide = TRUE
 
 	Crossed(var/atom/movable/AM)
 		. = ..(AM)
