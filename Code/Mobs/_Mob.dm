@@ -64,7 +64,7 @@
 		AM.Bumped(src)
 
 		// If moving downwards and we hit a mob, add as a rider to that mob
-		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide)
+		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide && AM.CanRide)
 			AM:Riders += src
 			Riding += AM
 
@@ -75,8 +75,8 @@
 	Tick()
 		. = ..()
 
-		//if (!Alive && x <= 1)
-			//loc = null
+		if (!Alive && x <= 1)
+			loc = null
 
 		// If underwater, emit a bubble on occasion
 		if (Underwater && !NoBreathe)

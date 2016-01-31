@@ -7,6 +7,7 @@
 	bound_y = 0
 	bound_width = 10
 	bound_height = 20
+	CanRide = FALSE
 
 	var
 		atom/SpawnLocation
