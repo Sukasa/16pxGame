@@ -20,6 +20,10 @@ atom
 					OnOffTick = TRUE
 					OnOffValue = !OnOffValue
 
+		// Called when something is affected by blast damage
+		BlastDamage(atom/movable/Source)
+			return
+
 		// Returns the angle to the passed atom, where 0° is due north
 		GetAngleTo(var/atom/To)
 			var/Point/P = new(src)

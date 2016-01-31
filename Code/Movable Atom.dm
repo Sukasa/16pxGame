@@ -11,6 +11,43 @@
 		AM.CrossedOver(src)
 
 	proc
+		Explode(Count, Spread = 0)
+			var/X = GetCenterX()
+			var/Y = GetCenterY()
+			var/Z = z
+			var/Wait = round(max(Count / 10, 1))
+
+			spawn
+				var/Angle = 0
+				var/Waiting = Wait
+				var/Increment = 10
+				var/MaxRandAdd = 360 / Count
+
+				for(var/i = 0; i < Count; i++)
+
+					Angle += Increment + rand(MaxRandAdd)
+
+					var/Dist = min(i / Count, 1) * Spread + rand(Spread)
+
+					var/dX = Dist * sin(Angle)
+					var/dY = Dist * cos(Angle)
+
+					var/sX = X + dX
+					var/sY = Y + dY
+
+					var/tX = round(sX / world.icon_size)
+					var/tY = round(sY / world.icon_size)
+					var/tZ = Z
+
+					var/turf/T = locate(tX, tY, tZ)
+					sX = sX % world.icon_size
+					sY = sY % world.icon_size
+
+					new/obj/Effect/Explosion(T, sX, sY)
+					if (!--Waiting)
+						sleep(world.tick_lag)
+						Waiting = Wait
+
 		HitZoneCallback(var/atom/movable/AM)
 			return
 

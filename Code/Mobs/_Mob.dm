@@ -49,6 +49,9 @@
 		Jump(var/force = 0)
 			return FALSE
 
+	BlastDamage(atom/movable/Source)
+		Damage(Source)
+
 	New()
 		. = ..()
 		Spawn()
