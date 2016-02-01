@@ -8,6 +8,7 @@
 		NoGooBounce = FALSE
 		NoBreathe = FALSE
 		Alive = TRUE
+		InGoo = FALSE
 
 		tmp
 			BubbleCooldown = 60
@@ -148,5 +149,6 @@
 
 		Riders = list( )
 		MoveY = FALSE
+		InGoo = FALSE
 
 

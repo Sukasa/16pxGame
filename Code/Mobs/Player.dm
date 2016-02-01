@@ -20,6 +20,7 @@
 			Invincibility = 0
 			LastValidDir = EAST
 			LastWasRiding = 0
+			LastAnimBits = -1
 
 		const
 			MaxAccel = 1.2
@@ -48,6 +49,13 @@
 		return 1
 
 	proc/SetAnimGroup(bits)
+
+		// Avoid changing icon_state if there's no animation state change
+		if (bits == LastAnimBits)
+			return
+
+		LastAnimBits = bits
+
 		if(      0 != (bits & AnimHintSwim) )
 			icon_state = "Swim"
 
@@ -105,7 +113,7 @@
 			if (YVelocity > 4.5)
 				YVelocity = 4.5
 
-		if (Underwater)
+		if (Underwater && !Grounded)
 			AnimBits |= AnimHintSwim
 
 			XVelocity = min(abs(XVelocity), 7) * sign(XVelocity)
@@ -133,11 +141,12 @@
 		if (Stun > 0)
 			Stun--
 
+		var/Gooped = InGoo
 		..()
 
 		if( YVelocity > 0 )
 			AnimBits |= AnimHintRise
-		else if( YVelocity < 0 && ! Riding.len && ! LastWasRiding )
+		else if( YVelocity < 0 && !Riding.len && !LastWasRiding && !Gooped)
 			AnimBits |= AnimHintFall
 
 		LastWasRiding = Riding.len
