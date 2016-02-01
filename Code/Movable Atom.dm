@@ -49,7 +49,7 @@
 						sleep(world.tick_lag)
 						Waiting = Wait
 
-		HitZoneCallback(var/atom/movable/AM)
+		HitZoneCallback(var/mob/M)
 			return
 
 		CrossedOver(atom/movable/AM)

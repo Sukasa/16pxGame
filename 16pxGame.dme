@@ -49,6 +49,7 @@
 #include "Code\Objects\ToggleBlock.dm"
 #include "Code\Objects\Water.dm"
 #include "Code\Objects\WaterSurface.dm"
+#include "Code\Objects\WoodBlock.dm"
 #include "Code\Objects\Collectibles\_Collectible.dm"
 #include "Code\Objects\Collectibles\Emerald.dm"
 #include "Code\Objects\Effects\AirBubble.dm"
