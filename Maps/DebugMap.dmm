@@ -21,12 +21,12 @@
 "u" = (/obj/Water,/turf,/area)
 "v" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
 "w" = (/obj/ToggleBlock,/turf,/area)
-"x" = (/mob/LitBomb/Big,/turf,/area)
-"y" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
-"z" = (/obj/Hazard/Spikes,/turf,/area)
+"x" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
+"y" = (/obj/Hazard/Spikes,/turf,/area)
+"z" = (/obj/Brick/Cracked,/turf,/area)
 "A" = (/obj/Spawner/LitBomb,/turf,/area)
 "B" = (/obj/PlayerStart,/turf,/area)
-"C" = (/obj/Brick/Cracked,/turf,/area)
+"C" = (/mob/FlierHorizontal,/mob/LitBomb/Big{step_x = 9; step_y = 8},/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbaaaaaaaaaaa
@@ -56,21 +56,21 @@ bhaafaaaaaaaaaaaaaaaaabaaaabuuuuuuuuuuuuubbbbbbabaaaaaaaaaaa
 bfaaaahaadddaaaaaaaaafbaaafbbbbbbbbbbbbbbbaaabbfbaaaaaaaaaaa
 baaaaaaaaaabfaaaaaaaaabfaaabanaanaaaaaaaawanabbabaaaaaaaaaaa
 baafaaafaaabddaajaaaaabaabbbaaaaaaaaaaaaawaaabbfbaaaaaaaaaaa
-baaaaaaaaaabbbddddddddbaaaaaaaaaaaaaaaaaawaxabbabaaaaaaaaaaa
-brrrrrrrrrrbbbbbbbbbbbbddddyyawwayydddddddyyybbfbaaaaaaaaaaa
-bbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaabbbbbbbaaabbabaaaaaaaaaaa
-bbbbbbbbbbbbbbbbbbbbbbbbbbbzzzzzzzzbbbbbbbaaaaafaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaAaaaaaaafaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaajBaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCCCCCaaaaaaaaaaaaaaaaaa
+baaaaaaaaaabbbddddddddbaaaaaaaaaaaaaaaaaawaaabbabaaaaaaaaaaa
+brrrrrrrrrrbbbbbbbbbbbbddddxxawwaxxdddddddxxxbbfbaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaabbbbbbbaaabbabbbbbbbaaaaa
+bbbbbbbbbbbbbbbbbbbbbbbbbbbyyyyyyyybbbbbbbaaaaafaaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaabahazaaaaaAaaaaaaafaaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaabhahzaaaaaaaaajBaaaaaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaabdddddddddddddbdddddaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaCaaaaaaaaahazaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaddddddddbaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -88,5 +88,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 "}
