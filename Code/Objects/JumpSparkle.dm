@@ -11,6 +11,9 @@
 	bound_width = 16
 	bound_height = 16
 
+	CrossedOver(atom/movable/AM)
+		Crossed(AM)
+
 	Crossed(atom/movable/AM)
 		. = ..(AM)
 		if (ismob(AM) && !invisibility)

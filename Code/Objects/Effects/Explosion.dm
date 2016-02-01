@@ -23,6 +23,8 @@
 		..()
 		if (Age == 4)
 			DoBlast()
+		if (Age == 16)
+			DoBlast()
 		if (Age >= 20)
 			loc = null
 

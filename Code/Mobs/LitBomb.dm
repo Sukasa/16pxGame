@@ -5,6 +5,7 @@
 
 	bound_width = 16
 	bound_height = 16
+	CanRide = FALSE
 
 	var
 		Fuse = 5
@@ -34,13 +35,17 @@
 		if (!sX || sX != sign(AM.XVelocity))
 			XVelocity += AM.XVelocity * 1.25
 			YVelocity = max(YVelocity + 1.5, 1.9)
-		else
-			XVelocity = AM.XVelocity * 1.25
-			YVelocity = max(YVelocity + 1.5, 1.9)
+
+	Jump(Force)
+		if (Force)
+			YVelocity += 3
+		return TRUE
 
 	Tick()
 		if (Grounded)
 			XVelocity *= 0.25
+		else
+			XVelocity *= 0.98
 
 		if (round(YVelocity, 1))
 			LastYV = YVelocity
