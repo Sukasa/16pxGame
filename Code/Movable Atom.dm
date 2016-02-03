@@ -95,7 +95,7 @@
 			var/NX = round(SX) % world.icon_size
 			var/NY = round(SY) % world.icon_size
 
-			. = Move(loc, 0, MX, MY)
+			. = Move(loc, dir, MX, MY)
 
 			if (step_x == NX)
 				// Successful X movement

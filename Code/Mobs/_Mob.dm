@@ -16,7 +16,6 @@
 			Gooped = FALSE
 
 		const
-			Gravity = 0.6
 			BubblePeriodMin = 1
 			BubblePeriodVar = 5
 			MaximumVelocity = 32 // Maximum sprite velocity in any axis
