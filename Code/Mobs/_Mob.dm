@@ -21,9 +21,6 @@
 			BubblePeriodVar = 5
 			MaximumVelocity = 32 // Maximum sprite velocity in any axis
 
-		list/Riders = list( )
-		list/Riding = list( )
-
 	proc
 		GetGravityModifier()
 			return 1
@@ -74,6 +71,7 @@
 			YVelocity = 0
 
 	Tick()
+
 		. = ..()
 
 		if (!Alive && x <= 1)

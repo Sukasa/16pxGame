@@ -7,9 +7,16 @@
 		Underwater = FALSE
 		CanRide = TRUE
 
+		list/Riders = list( )
+		list/Riding = list( )
+
 	Crossed(var/atom/movable/AM)
 		. = ..(AM)
 		AM.CrossedOver(src)
+
+	Tick()
+		. = ..()
+		Riding = list( )
 
 	proc
 		Explode(Count, Spread = 0)
