@@ -11,7 +11,6 @@
 	var
 		Active = TRUE
 		Speed = 1
-		list/Riders = list( )
 
 	New()
 		..()
@@ -23,15 +22,20 @@
 
 	Bumped(atom/movable/AM)
 		Riders += AM
+		if (ismob(AM))
+			AM.Riding |= src
 
 	Tick()
 		..()
 		if (Active)
 			for(var/atom/movable/AM in Riders)
-				var/obj/Conveyor/Other = locate(/obj/Conveyor) in AM.loc
+
+				var/obj/Conveyor/Other = locate(/obj/Conveyor) in AM.Riding
 				if (Other && Other != src)
 					continue
+
 				AM.MoveBy(Speed * (dir == EAST ? 1 : -1), 0)
+
 		Riders.len = 0
 
 	Switched
