@@ -44,6 +44,7 @@
 #include "Code\Objects\OneWay.dm"
 #include "Code\Objects\Platform.dm"
 #include "Code\Objects\PlayerStart.dm"
+#include "Code\Objects\Ramp.dm"
 #include "Code\Objects\Spawner.dm"
 #include "Code\Objects\Spikes.dm"
 #include "Code\Objects\SwitchBlock.dm"
