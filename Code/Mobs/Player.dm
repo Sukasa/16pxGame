@@ -25,7 +25,7 @@
 		const
 			MaxAccel = 1.2
 			MaxDecel = 1.3
-			JumpSpeed = 9.4
+			JumpSpeed = 11.4
 			MaxSpeed = 6
 			MaxHealth = 2
 			MercyInvincibilityPeriod = 1.25
