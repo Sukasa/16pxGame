@@ -30,6 +30,7 @@
 #include "Code\Mobs\FlierHorizontal.dm"
 #include "Code\Mobs\FlierVertical.dm"
 #include "Code\Mobs\Ghost.dm"
+#include "Code\Mobs\IronCrate.dm"
 #include "Code\Mobs\LitBomb.dm"
 #include "Code\Mobs\Player.dm"
 #include "Code\Objects\_Object.dm"
@@ -58,6 +59,7 @@
 #include "Code\Objects\Effects\Explosion.dm"
 #include "Code\Objects\Effects\WaterSplash.dm"
 #include "Code\Objects\Hazards\_Hazard.dm"
+#include "Code\Objects\Hazards\DeepPit.dm"
 #include "Code\Utility\Geometry.dm"
 #include "Code\Utility\Lists.dm"
 #include "Code\Utility\Math.dm"
@@ -67,6 +69,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\DebugMap.dmm"
+#include "Maps\TestMarioLevel.dmm"
 // END_INCLUDE
 
