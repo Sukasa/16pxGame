@@ -30,13 +30,16 @@
 		if (Active)
 			for(var/atom/movable/AM in Riders)
 
-				var/obj/Conveyor/Other = locate(/obj/Conveyor) in AM.Riding
+				var/obj/Conveyor/Other = locate(/obj/Conveyor) in get_step(AM.loc, SOUTH)
 				if (Other && Other != src)
 					continue
 
 				AM.MoveBy(Speed * (dir == EAST ? 1 : -1), 0)
 
 		Riders.len = 0
+
+	West
+		dir = WEST
 
 	Switched
 		color = rgb(255, 62, 245)
@@ -45,3 +48,12 @@
 				Active = !Active
 				icon_state = "Conveyor[Active]"
 			..()
+
+		West
+			dir = WEST
+
+		Off
+			Active = FALSE
+
+			West
+				dir = WEST
