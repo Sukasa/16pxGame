@@ -17,7 +17,7 @@
 
 	New(turf/Source, StepX, StepY)
 		..()
-		Move(get_turf(Source), StepX, StepY)
+		Move(get_turf(Source), 1, StepX, StepY)
 
 	Tick()
 		..()

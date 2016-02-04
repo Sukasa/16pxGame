@@ -56,16 +56,16 @@
 
 		LastAnimBits = bits
 
-		if(      0 != (bits & AnimHintSwim) )
+		if(     bits & AnimHintSwim)
 			icon_state = "Swim"
 
-		else if( 0 != (bits & AnimHintRise) )
+		else if(bits & AnimHintRise)
 			icon_state = "Rise"
 
-		else if( 0 != (bits & AnimHintFall) )
+		else if(bits & AnimHintFall)
 			icon_state = "Fall"
 
-		else if( 0 != (bits & AnimHintWalk) )
+		else if(bits & AnimHintWalk)
 			icon_state = "Walk"
 
 		else
@@ -141,7 +141,11 @@
 		if (Stun > 0)
 			Stun--
 
+		if (YVelocity <= 0 && y == 1 && step_x < 2)
+			Die()
+
 		var/Gooped = InGoo
+
 		..()
 
 		if( YVelocity > 0 )
@@ -178,6 +182,7 @@
 			Health = round(Health)
 			if (Health < 1)
 				Die()
+				return FALSE
 			else
 				Invincibility = world.fps * MercyInvincibilityPeriod
 			return TRUE
@@ -192,7 +197,7 @@
 		transform = matrix()
 		pixel_y = 0
 		Alive = TRUE
-		Move(get_turf(SpawnLocation), 0, 0)
+		Move(get_turf(SpawnLocation), dir, 0, 0)
 		XVelocity = 0
 		YVelocity = 0
 		SubStepX = 0
