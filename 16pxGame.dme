@@ -73,6 +73,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\TestMarioLevel.dmm"
+#include "Maps\DebugMap.dmm"
 // END_INCLUDE
 
