@@ -14,6 +14,6 @@
 				YVelocity = 3
 				DamageValue = 2
 				AM.BlastDamage(src)
-		else if (YVelocity < 0 && ismob(AM))
+		else if (YVelocity < 0 && ismob(AM) && Above(AM))
 			AM:Damage(src)
 		DamageValue = 1

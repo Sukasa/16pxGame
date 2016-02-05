@@ -43,11 +43,15 @@
 
 	Switched
 		color = rgb(255, 62, 245)
-		Tick()
-			if (OnOffTick)
-				Active = !Active
-				icon_state = "Conveyor[Active]"
+
+		New()
 			..()
+			var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
+			SC.NotificationSubscriptions += src
+
+		Notify()
+			Active = !Active
+			icon_state = "Conveyor[Active]"
 
 		West
 			dir = WEST

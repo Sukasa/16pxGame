@@ -5,20 +5,7 @@ atom
 		Age = 0
 		DamageValue = 1
 
-		global
-			OnOffTimer = 0
-			OnOffTick = FALSE
-			OnOffValue = FALSE
-
 	proc
-		// Handle the "On / Off" state logic that some blocks may end up using
-		DoOnOff()
-			OnOffTick = FALSE
-			if (OnOffTimer)
-				OnOffTimer--
-				if (!OnOffTimer)
-					OnOffTick = TRUE
-					OnOffValue = !OnOffValue
 
 		// Called when something is affected by blast damage
 		BlastDamage(atom/movable/Source)
@@ -63,3 +50,9 @@ atom
 				if (C.eye in Range)
 					return TRUE
 			return FALSE
+
+		Notify(State, datum/SignalChannel/Channel)
+			return
+
+		SignalCallback(datum/SignalChannel/Channel, State)
+			return
