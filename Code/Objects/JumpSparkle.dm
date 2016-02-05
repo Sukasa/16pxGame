@@ -19,7 +19,10 @@
 		if (ismob(AM) && !invisibility)
 			if (AM:Jump(TRUE))
 				invisibility = Cooldown
+				Ticker.PersistentTickAtoms += src
 
 	Tick()
 		if (invisibility > 0)
 			invisibility--
+		else
+			Ticker.PersistentTickAtoms -= src

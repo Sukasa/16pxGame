@@ -16,8 +16,10 @@
 
 		else if(!Underwater)
 			loc=null
+			Ticker.PersistentTickAtoms -= src
 
 		if (!(locate(/obj/Water) in loc))
 			loc = null
+			Ticker.PersistentTickAtoms -= src
 
 		. = ..()

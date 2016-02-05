@@ -16,5 +16,6 @@
 
 		else if( Life <= 0 )
 			loc=null
+			Ticker.PersistentTickAtoms -= src
 
 		. = ..()

@@ -90,6 +90,8 @@
 				if (dir == NORTH)
 					AB.step_y += bound_height
 
+				Ticker.PersistentTickAtoms += AB
+
 		// Limit X velocity to within maximum the physics engine can handle
 		if (XVelocity < -MaximumVelocity)
 			XVelocity = -MaximumVelocity

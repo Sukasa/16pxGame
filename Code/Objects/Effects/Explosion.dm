@@ -18,6 +18,7 @@
 	New(turf/Source, StepX, StepY)
 		..()
 		Move(get_turf(Source), 1, StepX, StepY)
+		Ticker.PersistentTickAtoms += src
 
 	Tick()
 		..()
@@ -27,6 +28,7 @@
 			DoBlast()
 		if (Age >= 20)
 			loc = null
+			Ticker.PersistentTickAtoms -= src
 
 	proc
 		DoBlast()
