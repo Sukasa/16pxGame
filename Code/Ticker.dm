@@ -8,8 +8,6 @@
 			while (TRUE)
 				TickAtoms = PersistentTickAtoms.Copy()
 
-				world.log << world.cpu
-
 				for(var/datum/SignalChannel/SC in Signals)
 					SC.Tick()
 
@@ -21,6 +19,5 @@
 
 				for(var/atom/A in TickAtoms)
 					A.Tick()
-
 
 				sleep(world.tick_lag) // Sleep for 1 frame
