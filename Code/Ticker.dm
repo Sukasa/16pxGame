@@ -13,9 +13,8 @@
 
 				// Tick all entities
 				for(var/mob/M)
-					if (M.loc) // Don't tick stuff if it's being killed off
-						for(var/turf/T in range(M, 1))
-							TickAtoms |= T.contents
+					if (M.loc)
+						TickAtoms |= range(M, M.ActivationRange)
 
 				for(var/atom/A in TickAtoms)
 					A.Tick()

@@ -9,6 +9,7 @@
 		NoBreathe = FALSE
 		Alive = TRUE
 		InGoo = FALSE
+		ActivationRange = 1
 
 		tmp
 			BubbleCooldown = 60
