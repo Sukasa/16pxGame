@@ -5,6 +5,7 @@
 	dir = EAST
 	density = 1
 
+
 	bound_y = 26
 	bound_height = 6
 
@@ -43,10 +44,12 @@
 
 	Switched
 		color = rgb(255, 62, 245)
+		var
+			SignalChannel = "OnOff"
 
 		New()
 			..()
-			var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
+			var/datum/SignalChannel/SC = GetSignalChannel(SignalChannel)
 			SC.NotificationSubscriptions += src
 
 		Notify()

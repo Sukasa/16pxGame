@@ -5,13 +5,11 @@
 	CanHit = TRUE
 	density = 1
 
-	New()
-		..()
-		var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
-		SC.NotificationSubscriptions += src
+	var
+		SignalChannel = "OnOff"
 
 	// Handle being hit from below
 	OnHit()
 		..()
-		var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
+		var/datum/SignalChannel/SC = GetSignalChannel(SignalChannel)
 		SC.SetState(!SC.State)
