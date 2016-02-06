@@ -144,13 +144,13 @@
 		if (YVelocity <= 0 && y == 1 && step_x < 2)
 			Die()
 
-		var/Gooped = InGoo
+		var/Gooped = SuppressFallAnimation
 
 		..()
 
 		if( YVelocity > 0 )
 			AnimBits |= AnimHintRise
-		else if( YVelocity < 0 && !Riding.len && !LastWasRiding && !Gooped)
+		else if( YVelocity < (GetGravityModifier() * Gravity * -2) && !Grounded && !Riding.len && !LastWasRiding && !Gooped)
 			AnimBits |= AnimHintFall
 
 		LastWasRiding = Riding.len

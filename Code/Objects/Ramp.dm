@@ -26,10 +26,12 @@
 			var/xR = xL + M.bound_width
 
 			var/overlap = max(GetSolidPosY(xL), GetSolidPosY(xR)) - GetFootPosY(M)
+
 			if ( overlap > 0 )
 				M.MoveBy(0, overlap)
 				M.YVelocity = 0
 				M.Grounded = TRUE
+				M.SuppressFallAnimation = TRUE
 
 	proc
 		GetSolidPosY(var/X)

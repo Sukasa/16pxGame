@@ -41,7 +41,7 @@
 			if (GetFootPosY(M) < GetSolidPosY(M) + 3)
 				M.XVelocity = 0
 
-			M.InGoo = TRUE
+			M.SuppressFallAnimation = TRUE
 			M.YVelocity *= 0.2
 			M.YVelocity += 0.5
 			M.XVelocity *= 0.5

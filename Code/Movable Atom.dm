@@ -78,6 +78,7 @@
 			return (src.y * world.icon_size) + src.step_y + src.bound_y + SubStepY + (src.bound_height / 2)
 
 		MoveBy(var/StepX, var/StepY)
+
 			var/oSX = step_x
 			var/oSY = step_y
 
