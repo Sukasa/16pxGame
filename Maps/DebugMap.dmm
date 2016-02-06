@@ -10,30 +10,32 @@
 "j" = (/obj/OneWayBlock{tag = "icon-OneWay (EAST)"; icon_state = "OneWay"; dir = 4},/turf,/area)
 "k" = (/mob/Crawler,/turf,/area)
 "l" = (/obj/WoodBlock,/turf,/area)
-"m" = (/obj/Checkpoint,/turf,/area)
-"n" = (/mob/FlierHorizontal{step_x = 17},/turf,/area)
-"o" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
-"p" = (/obj/Collectible/Emerald,/obj/Conveyor/Switched{dir = 8},/turf,/area)
-"q" = (/obj/SwitchBlock,/turf,/area)
-"r" = (/obj/Conveyor/Switched,/turf,/area)
-"s" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
-"t" = (/mob/FlierVertical,/turf,/area)
-"u" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
-"v" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
-"w" = (/obj/Brick/BrickTop,/obj/Conveyor,/turf,/area)
-"x" = (/obj/Brick/BrickTop,/obj/Conveyor{dir = 8; icon_state = "Conveyor0"; tag = "icon-Conveyor0"},/turf,/area)
-"y" = (/obj/Platform,/mob/Crawler,/turf,/area)
-"z" = (/obj/Water/Surface,/turf,/area)
-"A" = (/obj/Water,/turf,/area)
-"B" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
-"C" = (/obj/ToggleBlock,/turf,/area)
-"D" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
-"E" = (/obj/Hazard/Spikes,/turf,/area)
-"F" = (/obj/Brick/Cracked,/turf,/area)
-"G" = (/obj/Spawner/LitBomb,/turf,/area)
-"H" = (/obj/PlayerStart,/turf,/area)
-"I" = (/mob/FlierHorizontal,/mob/LitBomb/Big{step_x = 9; step_y = 8},/turf,/area)
-"J" = (/obj/Conveyor,/turf,/area)
+"m" = (/obj/Ramp/Ramp1R,/turf,/area)
+"n" = (/obj/Checkpoint,/turf,/area)
+"o" = (/mob/FlierHorizontal{step_x = 17},/turf,/area)
+"p" = (/obj/Hazard/Spikes{tag = "icon-Spikes"; icon_state = "Spikes"; dir = 2},/turf,/area)
+"q" = (/obj/Collectible/Emerald,/obj/Conveyor/Switched{dir = 8},/turf,/area)
+"r" = (/obj/SwitchBlock,/turf,/area)
+"s" = (/obj/Conveyor/Switched,/turf,/area)
+"t" = (/obj/Hazard/Spikes{tag = "icon-Spikes (EAST)"; icon_state = "Spikes"; dir = 4},/turf,/area)
+"u" = (/mob/FlierVertical,/turf,/area)
+"v" = (/obj/Hazard/Spikes{tag = "icon-Spikes (WEST)"; icon_state = "Spikes"; dir = 8},/turf,/area)
+"w" = (/obj/Hazard/Spikes/Acidblock,/turf,/area)
+"x" = (/obj/Brick/BrickTop,/obj/Conveyor,/turf,/area)
+"y" = (/obj/Brick/BrickTop,/obj/Conveyor{dir = 8; icon_state = "Conveyor0"; tag = "icon-Conveyor0"},/turf,/area)
+"z" = (/obj/Platform,/mob/Crawler,/turf,/area)
+"A" = (/obj/Water/Surface,/turf,/area)
+"B" = (/obj/Water,/turf,/area)
+"C" = (/obj/Water,/obj/Collectible/Emerald,/turf,/area)
+"D" = (/obj/Ramp/Ramp1L,/turf,/area)
+"E" = (/obj/ToggleBlock,/turf,/area)
+"F" = (/obj/ToggleBlock{tag = "icon-On"; icon_state = "On"},/turf,/area)
+"G" = (/obj/Hazard/Spikes,/turf,/area)
+"H" = (/obj/Brick/Cracked,/turf,/area)
+"I" = (/obj/Spawner/LitBomb,/turf,/area)
+"J" = (/obj/PlayerStart,/turf,/area)
+"K" = (/mob/FlierHorizontal,/mob/LitBomb/Big{step_x = 9; step_y = 8},/turf,/area)
+"L" = (/obj/Conveyor,/turf,/area)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbaaaaaaaaaaa
@@ -44,40 +46,40 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabfbaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaagaaaaaaaaaaaaaaababaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaahaaaaaaaaaaaaaaaaabfbaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaadddaiaiadddaaaaaaaaaaaaaaaabfbaaaaaaaaaaa
+aaaaaaaaaaaaaaaaddddaaaiaiadddaaaaaaaaaaaaaaaabfbaaaaaaaaaaa
 aaaaaaaaajakaacaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaababaaaaaaaaaaa
-aaaaaaaaaallllaaaaaaaaaaaaaaaaaaddfdaaaaaaaacabfbaaaaaaaaaaa
-aaaaaaaaaaaaahaaaaaaahhaaaaaaaaaaafaaaaaaahdddbabaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaamanaaaaaaaaaaaaaaaaadbbbbfbaaaaaaaaaaa
-aaaaaaaaaaaadddaaaaaooooaabkbaaaooooaaaaadbbbbbabaaaaaaaaaaa
-aaaaaaaaaaaabbbfaaaaahaaapbqbrhaaahaaaaafbbbbbbfbaaaaaaaaaaa
-aaaaaaaaaaaabsaaaahaaaaaaaaaaaaaaaaaahataaubbbbabaaaaaaaaaaa
-vvvvvvvvvvvvbsaaaaaaaaaaaaaaaaaaaaaaaaaaaaubbbbfbaaaaaaaaaaa
-baaaaaaaabbbbdddddddaaaawwweexxxaafadddddddbbbbabaaaaaaaaaaa
+aaaaaaaaaallllaaaaaaaaaaaaaaaaaaddfdaaaaaaaaambfbaaaaaaaaaaa
+aaaaaaaaaaaaahaaaaaaahhaaaaaaaaaaafaaaaaaamddbbabaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaanaoaaaaaaaaaaaaaaaambbbbbfbaaaaaaaaaaa
+aaaaaaaaaaaadddaaaaappppaabkbaaappppaaaaabbbbbbabaaaaaaaaaaa
+aaaaaaaaaaaabbbfaaaaahaaaqbrbshaaahaaaaafbbbbbbfbaaaaaaaaaaa
+aaaaaaaaaaaabtaaaahaaaaaaaaaaaaaaaaaahauaavbbbbabaaaaaaaaaaa
+wwwwwwwwwwwwbtaaaaaaaaaaaaaaaaaaaaaaaaaaaavbbbbfbaaaaaaaaaaa
+baaaaaaaabbbbdddddddaaaaxxxeeyyyaafadddddddbbbbabaaaaaaaaaaa
 baaahaadaaaaaaaaaaaaaaaaaaaeeaaaaaaaaaaaabbbbbbfbaaaaaaaaaaa
-baaaaafbahhhhmaaaaaaaadaahaeyahaabzzzzzzzbbbbbbabaaaaaaaaaaa
-bahaaaabddddddaaaaaaafbvvvvvvvvvvbAAAAAAAbbbbbbfbaaaaaaaaaaa
-baafaaaaaaaaabaaaaaaaabaaaaaaaaaabABAAABAbbbbbbabaaaaaaaaaaa
-baaaaaaaaddddbaaaaaaaabaaaadzddddbAAABAAAbbbbbbfbaaaaaaaaaaa
-bhaafaaaaaaaaaaaaaaaaabaaaabAAAAAAAAAAAAAbbbbbbabaaaaaaaaaaa
+baaaaafbahhhhnaaaaaaaadaahaezahaabAAAAAAAbbbbbbabaaaaaaaaaaa
+bahaaaabddddddaaaaaaafbwwwwwwwwwwbBBBBBBBbbbbbbfbaaaaaaaaaaa
+baafaaaaaaaaabaaaaaaaabaaaaaaaaaabBCBBBCBbbbbbbabaaaaaaaaaaa
+baaaaaaaaddddbaaaaaaaabaaaadAddddbBBBCBBBbbbbbbfbaaaaaaaaaaa
+bhaafaaaaaaaaaaaaaaaaabaaaabBBBBBBBBBBBBBbbbbbbabaaaaaaaaaaa
 bfaaaahaadddaaaaaaaaafbaaafbbbbbbbbbbbbbbbaaabbfbaaaaaaaaaaa
-baaaaaaaaaabfaaaaaaaaabfaaabaqaaqaaaaaaaaCaqabbabaaaaaaaaaaa
-baafaaafaaabddaamaaaaabaabbbaaaaaaaaaaaaaCaaabbfbaaaaaaaaaaa
-baaaaaaaaaabbbddddddddbaaaaaaaaaaaaaaaaaaCaaabbabaaaaaaaaaaa
-bvvvvvvvvvvbbbbbbbbbbbbddddDDaCCaDDdddddddDDDbbfbaaaaaaaaaaa
+baaaaaaaaaabDaaaaaaaaabfaaabaraaraaaaaaaaEarabbabaaaaaaaaaaa
+baafaaafaaabbdDanaaaaabaabbbaaaaaaaaaaaaaEaaabbfbaaaaaaaaaaa
+baaaaaaaaaabbbbdddddddbaaaaaaaaaaaaaaaaaaEaaabbabaaaaaaaaaaa
+bwwwwwwwwwwbbbbbbbbbbbbddddFFaEEaFFdddddddFFFbbfbaaaaaaaaaaa
 bbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaabbbbbbbaaabbabbbbbbbaaaaa
-bbbbbbbbbbbbbbbbbbbbbbbbbbbEEEEEEEEbbbbbbbaaaaafaaaaaabaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaabahaFaaaaaGaaaaaaafaaaaaabaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaabhahFaaaaaaaaamHaaaaaaaaabaaaaa
+bbbbbbbbbbbbbbbbbbbbbbbbbbbGGGGGGGGbbbbbbbaaaaafaaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaabahaHaaaaaIaaaaaaafaaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaabhahHaaaaaaaaanJaaaaaaaaabaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaabdddddddddddddbdddddaaaaabaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFaaaaabaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaIaaaaaaaaahaFaaaaabaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaddddddddbaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFFFFaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaaaabaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaKaaaaaaaaahaHaaaambaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaadddddddbbaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHHHHHaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -85,8 +87,8 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aJJJaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-arrraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+asssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -95,5 +97,5 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 "}
