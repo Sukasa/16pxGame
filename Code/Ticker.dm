@@ -14,7 +14,8 @@
 				// Tick all entities
 				for(var/mob/M)
 					if (M.loc)
-						TickAtoms |= range(M, M.ActivationRange)
+						TickAtoms |= M // Ensure that mobs are stuffed in before the blocks they are affecting
+						TickAtoms |= range(M, M.ActivationRange) // It affects Ramp functionality
 
 				for(var/atom/A in TickAtoms)
 					A.Tick()
