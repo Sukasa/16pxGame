@@ -9,11 +9,13 @@
 	// Iron crates can now do blast damage when they land on things
 	Bump(atom/movable/AM)
 		. = ..()
-		if (YVelocity < -24)
+		if (YVelocity < -16)
 			if (Above(AM))
 				YVelocity = 3
 				DamageValue = 2
 				AM.BlastDamage(src)
-		else if (YVelocity < 0 && ismob(AM) && Above(AM))
-			AM:Damage(src)
+		else if (YVelocity < 0 && Above(AM))
+			if (ismob(AM))
+				AM:Damage(src)
+			YVelocity = 1
 		DamageValue = 1
