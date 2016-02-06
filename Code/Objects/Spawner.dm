@@ -10,6 +10,9 @@
 	BlastDamage()
 		return
 
+	New()
+		Ticker.PersistentTickAtoms += src
+
 	Tick()
 		if (--Cooldown <= 0)
 			Cooldown = rand(500) + 50

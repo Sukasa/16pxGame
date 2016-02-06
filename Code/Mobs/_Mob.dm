@@ -9,6 +9,7 @@
 		NoBreathe = FALSE
 		Alive = TRUE
 		SuppressFallAnimation = FALSE
+		ActivationRange = 1
 
 		tmp
 			BubbleCooldown = 60
@@ -89,6 +90,8 @@
 					AB.step_x += bound_width
 				if (dir == NORTH)
 					AB.step_y += bound_height
+
+				Ticker.PersistentTickAtoms += AB
 
 		// Limit X velocity to within maximum the physics engine can handle
 		if (XVelocity < -MaximumVelocity)

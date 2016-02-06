@@ -16,6 +16,10 @@
 				M.step_x = rand(-14,14)
 				M.pixel_y = -6
 				M.Life = rand(11,23)
+				Ticker.PersistentTickAtoms |= M
+
+	New()
+		Ticker.PersistentTickAtoms |= src
 
 	Tick()
 		Cooldown -= 1
