@@ -30,6 +30,7 @@
 			MaxHealth = 2
 			MercyInvincibilityPeriod = 1.25
 
+			// Bitflags for selecting animation state.
 			AnimHintStand = 1
 			AnimHintRise  = 2
 			AnimHintFall  = 4
@@ -49,6 +50,10 @@
 		return 1
 
 	proc/SetAnimGroup(bits)
+<<<<<<< HEAD
+		// Select an animation group based on bitflags.
+		if(      0 != (bits & AnimHintSwim) )
+=======
 
 		// Avoid changing icon_state if there's no animation state change
 		if (bits == LastAnimBits)
@@ -57,6 +62,7 @@
 		LastAnimBits = bits
 
 		if(     bits & AnimHintSwim)
+>>>>>>> master
 			icon_state = "Swim"
 
 		else if(bits & AnimHintRise)
@@ -73,6 +79,7 @@
 
 
 	Tick()
+		// Accumulator for animation-state relevant flags.
 		var/AnimBits = 0
 
 		if (!client) // If the client disconnected, twiddle thumbs
@@ -149,8 +156,16 @@
 		..()
 
 		if( YVelocity > 0 )
+			// Can't be riding and rising at the same time... if ever we
+			// have reversed gravity this will need a not-riding check as well.
 			AnimBits |= AnimHintRise
+<<<<<<< HEAD
+
+		else if( YVelocity < 0 && ! Riding.len && ! LastWasRiding )
+			// Fall if descending, not riding, and wasn't riding last Tick() either.
+=======
 		else if( YVelocity < (GetGravityModifier() * Gravity * -2) && !Grounded && !Riding.len && !LastWasRiding && !Gooped)
+>>>>>>> master
 			AnimBits |= AnimHintFall
 
 		LastWasRiding = Riding.len

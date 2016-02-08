@@ -11,12 +11,18 @@
 	bound_width = 16
 	bound_height = 16
 
+	CrossedOver(atom/movable/AM)
+		Crossed(AM)
+
 	Crossed(atom/movable/AM)
 		. = ..(AM)
 		if (ismob(AM) && !invisibility)
 			if (AM:Jump(TRUE))
 				invisibility = Cooldown
+				Ticker.PersistentTickAtoms += src
 
 	Tick()
 		if (invisibility > 0)
 			invisibility--
+		else
+			Ticker.PersistentTickAtoms -= src

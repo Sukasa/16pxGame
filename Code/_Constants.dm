@@ -20,6 +20,8 @@ var
 		DefaultWorldView = 9		// Default world view radius
 
 
+		Gravity = 0.6
+
 		KeyStateUp = 0				// Key is unpressed
 		KeyStatePressed = 3			// Key was just pressed
 		KeyStateHeld = 1			// Key has been held down for more than 1 frame

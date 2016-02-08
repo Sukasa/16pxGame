@@ -7,8 +7,9 @@
 	New()
 		. = ..()
 		density = icon_state == "On"
+		var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
+		SC.NotificationSubscriptions += src
 
-	Tick()
-		if (OnOffTick)
-			density = !density
-			icon_state = (icon_state == "Off" ? "On" : "Off")
+	Notify(State)
+		density = !density
+		icon_state = (icon_state == "Off" ? "On" : "Off")

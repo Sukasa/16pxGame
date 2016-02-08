@@ -8,6 +8,8 @@
 		NoGooBounce = FALSE
 		NoBreathe = FALSE
 		Alive = TRUE
+		SuppressFallAnimation = FALSE
+		ActivationRange = 1
 
 		tmp
 			BubbleCooldown = 60
@@ -15,13 +17,9 @@
 			Gooped = FALSE
 
 		const
-			Gravity = 0.6
 			BubblePeriodMin = 1
 			BubblePeriodVar = 5
 			MaximumVelocity = 32 // Maximum sprite velocity in any axis
-
-		list/Riders = list( )
-		list/Riding = list( )
 
 	proc
 		GetGravityModifier()
@@ -49,6 +47,9 @@
 		Jump(var/force = 0)
 			return FALSE
 
+	BlastDamage(atom/movable/Source)
+		Damage(Source)
+
 	New()
 		. = ..()
 		Spawn()
@@ -61,7 +62,7 @@
 		AM.Bumped(src)
 
 		// If moving downwards and we hit a mob, add as a rider to that mob
-		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide)
+		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide && AM.CanRide)
 			AM:Riders += src
 			Riding += AM
 
@@ -70,10 +71,11 @@
 			YVelocity = 0
 
 	Tick()
+
 		. = ..()
 
-		//if (!Alive && x <= 1)
-			//loc = null
+		if (!Alive && x <= 1)
+			loc = null
 
 		// If underwater, emit a bubble on occasion
 		if (Underwater && !NoBreathe)
@@ -88,6 +90,8 @@
 					AB.step_x += bound_width
 				if (dir == NORTH)
 					AB.step_y += bound_height
+
+				Ticker.PersistentTickAtoms += AB
 
 		// Limit X velocity to within maximum the physics engine can handle
 		if (XVelocity < -MaximumVelocity)
@@ -145,5 +149,6 @@
 
 		Riders = list( )
 		MoveY = FALSE
+		SuppressFallAnimation = FALSE
 
 

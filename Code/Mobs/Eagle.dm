@@ -3,12 +3,12 @@
 	density = 0
 
 	icon = 'Eagle.dmi'
-	icon_state = "Eagle"
+	icon_state = "Fly"
 
-	bound_x = 12
-	bound_width = 8
-	bound_height = 16
-	bound_y = 2
+	bound_x = 4
+	bound_width = 24
+	bound_height = 8
+	bound_y = 24
 
 	var
 		Period = 4
@@ -38,8 +38,6 @@
 		if (ActivePeriod <= 0)
 			ActivePeriod = Period * world.fps
 			Speed = 0 - Speed
-			var/matrix/M = transform || matrix() // Flip the sprite
-			transform = M.Scale(-1, 1)
 
 		XVelocity = Speed
 
@@ -48,6 +46,8 @@
 				for(var/mob/Player/P in world)
 					if (CanAttack(P))
 						State = 1
+						icon_state = "Dive"
+
 						OriginalY = GetFineY()
 						SwoopStart = Age
 						SwoopSpeed = (-(GetFineY() - (P.GetFineY())) / (world.fps * SwoopPeriod * 0.5)) * sqrt(2)
@@ -60,6 +60,8 @@
 		else if (State == 1) // Swoop
 			if ((Age - SwoopStart + (world.fps / 2.6)) > (SwoopPeriod * world.fps))
 				State = 2
+				icon_state = "Fly"
+
 				if (Grabbed)
 					SwoopPeriod /= 2
 				Grabbed = null
@@ -86,11 +88,17 @@
 				YVelocity = 4.6
 
 			if (round(GetFineY(), 1) == round(OriginalY, 1))
+				Cooldown = SwoopPeriod * world.fps * 2
 				YVelocity = 0
 				State = 0
-				Cooldown = SwoopPeriod * world.fps * 2
+				icon_state = "Fly"
 
 		. = ..()
+
+		if( Speed < 0 )
+			dir = WEST
+		else
+			dir = EAST
 
 		if (Grabbed)
 			Grabbed.MoveStun = 2

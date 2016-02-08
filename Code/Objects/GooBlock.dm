@@ -34,13 +34,14 @@
 			if (Other && Other != src)
 				continue
 
-			if (GetFootPosY(M) < GetSolidPosY())
-				M.MoveBy(0, GetSolidPosY() - GetFootPosY(M))
+			if (GetFootPosY(M) < GetSolidPosY(M))
+				M.MoveBy(0, GetSolidPosY(M) - GetFootPosY(M))
 				M.YVelocity = 0
 
-			if (GetFootPosY(M) < GetSolidPosY() + 3)
+			if (GetFootPosY(M) < GetSolidPosY(M) + 3)
 				M.XVelocity = 0
 
+			M.SuppressFallAnimation = TRUE
 			M.YVelocity *= 0.2
 			M.YVelocity += 0.5
 			M.XVelocity *= 0.5
@@ -50,7 +51,7 @@
 
 	proc
 
-		GetSolidPosY()
+		GetSolidPosY(mob/M)
 			return GetFineY() + 16
 
 		GetFootPosY(var/mob/M)

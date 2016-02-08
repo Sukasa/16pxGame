@@ -18,5 +18,13 @@ proc/ceil(x)
 	if (x != .)
 		. += 1
 
+proc/avg()
+	var/Sum = 0
+	var/Count = 0
+	for(var/i in args)
+		Sum += i
+		Count++
+	return Count ? Sum / Count : 0
+
 proc/lerp(var/From, var/To, var/Amount)
 	. = From + min(max(Amount, 0), 1) * (To - From)

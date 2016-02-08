@@ -5,13 +5,58 @@
 		SubStepY = 0
 		SmoothMove = 0
 		Underwater = FALSE
+		CanRide = TRUE
+
+		list/Riders = list( )
+		list/Riding = list( )
 
 	Crossed(var/atom/movable/AM)
 		. = ..(AM)
 		AM.CrossedOver(src)
 
+	Tick()
+		. = ..()
+		Riding = list( )
+
 	proc
-		HitZoneCallback(var/atom/movable/AM)
+		Explode(Count, Spread = 0)
+			var/X = GetCenterX()
+			var/Y = GetCenterY()
+			var/Z = z
+			var/Wait = round(max(Count / 10, 1))
+
+			spawn
+				var/Angle = 0
+				var/Waiting = Wait
+				var/Increment = 10
+				var/MaxRandAdd = 360 / Count
+
+				for(var/i = 0; i < Count; i++)
+
+					Angle += Increment + rand(MaxRandAdd)
+
+					var/Dist = min(i / Count, 1) * Spread + rand(Spread)
+
+					var/dX = Dist * sin(Angle)
+					var/dY = Dist * cos(Angle)
+
+					var/sX = X + dX
+					var/sY = Y + dY
+
+					var/tX = round(sX / world.icon_size)
+					var/tY = round(sY / world.icon_size)
+					var/tZ = Z
+
+					var/turf/T = locate(tX, tY, tZ)
+					sX = sX % world.icon_size
+					sY = sY % world.icon_size
+
+					new/obj/Effect/Explosion(T, sX, sY)
+					if (!--Waiting)
+						sleep(world.tick_lag)
+						Waiting = Wait
+
+		HitZoneCallback(var/mob/M)
 			return
 
 		CrossedOver(atom/movable/AM)
@@ -33,6 +78,7 @@
 			return (src.y * world.icon_size) + src.step_y + src.bound_y + SubStepY + (src.bound_height / 2)
 
 		MoveBy(var/StepX, var/StepY)
+
 			var/oSX = step_x
 			var/oSY = step_y
 
@@ -50,7 +96,7 @@
 			var/NX = round(SX) % world.icon_size
 			var/NY = round(SY) % world.icon_size
 
-			. = Move(loc, 0, MX, MY)
+			. = Move(loc, dir, MX, MY)
 
 			if (step_x == NX)
 				// Successful X movement

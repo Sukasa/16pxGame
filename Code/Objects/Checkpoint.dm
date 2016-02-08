@@ -7,8 +7,10 @@
 	var
 		Raised = FALSE
 
-	Cross(atom/movable/AM)
-		. = ..(AM)
+	CrossedOver(atom/movable/AM)
+		Crossed(AM)
+
+	Crossed(atom/movable/AM)
 		if (!Raised && isplayer(AM))
 			AM:SpawnLocation = src.loc
 			icon_state = "Raised"

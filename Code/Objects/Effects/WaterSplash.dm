@@ -8,3 +8,4 @@
 		. = ..()
 		if (Age > 30)
 			loc = null
+			Ticker.PersistentTickAtoms -= src
