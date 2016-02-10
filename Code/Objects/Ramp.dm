@@ -30,6 +30,7 @@
 			if ( overlap > 0 )
 				M.MoveBy(0, overlap)
 				M.YVelocity = 0
+				M.SubStepY = 0
 				M.Grounded = TRUE
 				M.SuppressFallAnimation = TRUE
 
