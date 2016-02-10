@@ -23,20 +23,20 @@
 			transform = MX.Scale(-1, 1)
 
 	Bumped(atom/movable/AM)
-		Riders += AM
+		RidersActive += AM
 
 	Tick()
 		..()
 		if (Active)
-			for(var/atom/movable/AM in Riders)
+			for(var/atom/movable/AM in RidersActive)
 
 				var/obj/Conveyor/Other = locate(/obj/Conveyor) in get_step(AM.loc, SOUTH)
 				if (Other && Other != src)
 					continue
 
-				AM.MoveBy(Speed * (dir == EAST ? 1 : -1), 0)
+				AM.ApplyExternalMovement(Speed * (dir == EAST ? 1 : -1), 0)
 
-		Riders.len = 0
+		RidersActive.len = 0
 
 	West
 		dir = WEST

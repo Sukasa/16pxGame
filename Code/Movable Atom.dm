@@ -6,9 +6,13 @@
 		SmoothMove = 0
 		Underwater = FALSE
 		CanRide = TRUE
+		ExternalMoveFlag = FALSE
 
-		list/Riders = list( )
-		list/Riding = list( )
+		list
+			RidersActive = list( )
+			RidersArchived = list( )
+			Riding = list( )
+
 
 	Crossed(var/atom/movable/AM)
 		. = ..(AM)
@@ -19,6 +23,30 @@
 		Riding = list( )
 
 	proc
+
+		// Initialization function
+		Init()
+			return
+
+		ApplyExternalMovement(DX, DY)
+
+			// This accumulation has the odd size-effect of ordering by Y, due to how Riders are handled
+			var/list/Movers = RidersActive | RidersArchived | src
+			for(var/X = 1; X <= Movers.len; X++)
+				var/atom/movable/AM = Movers[X]
+				Movers |= AM.RidersActive
+				Movers |= AM.RidersArchived
+
+			// Now attempt to move all atoms.
+
+			if (DY > 0)
+				for(var/X = Movers.len; X; X--)
+					var/atom/movable/AM = Movers[X]
+					AM.MoveBy(DX, DY)
+			else
+				for(var/atom/movable/AM in Movers)
+					AM.MoveBy(DX, DY)
+
 		Explode(Count, Spread = 0)
 			var/X = GetCenterX()
 			var/Y = GetCenterY()

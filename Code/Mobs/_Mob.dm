@@ -40,9 +40,11 @@
 			transform = Mx.Scale(1, -1)
 			pixel_y -= (bound_y + bound_height)
 
-			Riders = list( )
+			RidersActive.len = 0
+			RidersArchived.len = 0
 			for(var/mob/M in Riding)
-				M.Riders -= src
+				M.RidersActive -= src
+				M.RidersArchived -= src
 			Riding = list( )
 
 		Jump(var/force = 0)
@@ -64,7 +66,7 @@
 
 		// If moving downwards and we hit a mob, add as a rider to that mob
 		if (YVelocity < 0 && ismob(AM) && Above(AM) && DoesRide && AM.CanRide)
-			AM:Riders += src
+			AM.RidersActive += src
 			Riding += AM
 
 		// If moving upwards and we flagged for Y movement, and we bumped, 0 velocity
@@ -108,7 +110,7 @@
 			YVelocity = MaximumVelocity
 
 		// Before moving, move riders in the correct direction as well
-		for(var/mob/M in Riders)
+		for(var/mob/M in RidersActive)
 			M.SubStepX = SubStepX
 			M.SubStepY = SubStepY
 
@@ -148,7 +150,10 @@
 			if (!MoveBy(0, YVelocity))
 				YVelocity = 0
 
-		Riders = list( )
+		var/list/Swap = RidersArchived
+		RidersArchived = RidersActive
+		Swap.len = 0
+		RidersActive = Swap
 		MoveY = FALSE
 		SuppressFallAnimation = FALSE
 
