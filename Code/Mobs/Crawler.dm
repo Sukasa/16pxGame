@@ -26,10 +26,11 @@
 			transform = M.Scale(-1, 1)
 
 	Damage(atom/movable/AM)
-		if (!istype(AM, /obj/Hazard))
+		if ( !istype(AM, /obj/Hazard) || AM:UniversalHazard )
 			Die()
 
 			return TRUE
+
 		return FALSE
 
 	Bump(atom/movable/AM)
