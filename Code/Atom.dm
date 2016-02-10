@@ -56,3 +56,13 @@ atom
 
 		SignalCallback(datum/SignalChannel/Channel, State)
 			return
+
+		AutoJoin()
+			var/B = 0
+			for(var/X = 1, X <= 8, X++)
+				var/turf/T = get_step(src, Cardinal8[X])
+				if (locate(type) in T)
+					B |= 1 << X
+			B = AutoTile[(B >> 1) + 1]
+			icon_state = "[B]"
+			world.log << "[B] @ [x], [y]"
