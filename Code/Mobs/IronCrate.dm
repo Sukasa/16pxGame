@@ -17,5 +17,5 @@
 		else if (YVelocity < 0 && Above(AM))
 			if (ismob(AM))
 				AM:Damage(src)
-			YVelocity = 1
+			YVelocity = 1.5
 		DamageValue = 1
