@@ -6,6 +6,8 @@
 		MaxXVelocity = 0
 		MinYVelocity = 0
 		MaxYVelocity = 0
+		CooldownPeriod = 500
+		CooldownMin = 50
 
 	BlastDamage()
 		return
@@ -15,7 +17,7 @@
 
 	Tick()
 		if (--Cooldown <= 0)
-			Cooldown = rand(500) + 50
+			Cooldown = rand(CooldownPeriod) + CooldownMin
 			if (SpawnType)
 				var/mob/M = new SpawnType(loc)
 				M.XVelocity = rand() * (MaxXVelocity - MinXVelocity) + MinXVelocity
@@ -25,3 +27,24 @@
 		SpawnType = /mob/LitBomb
 		MinXVelocity = -3
 		MaxXVelocity = 3
+
+	Quota
+		CooldownPeriod = 150
+		var
+			MaxNum = 2
+			list/Created = list( )
+
+		Tick()
+			if (--Cooldown <= 0)
+				Cooldown = rand(500) + 50
+
+				for(var/x = Created.len; x; x--)
+					var/mob/C = Created[x]
+					if (!C.loc)
+						Created -= C
+
+				if (Created.len < MaxNum && SpawnType)
+					var/mob/M = new SpawnType(loc)
+					Created += M
+					M.XVelocity = rand() * (MaxXVelocity - MinXVelocity) + MinXVelocity
+					M.YVelocity = rand() * (MaxYVelocity - MinYVelocity) + MinYVelocity
