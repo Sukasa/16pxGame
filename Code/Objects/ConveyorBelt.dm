@@ -23,8 +23,6 @@
 
 	Bumped(atom/movable/AM)
 		Riders += AM
-		if (ismob(AM))
-			AM.Riding |= src
 
 	Tick()
 		..()
