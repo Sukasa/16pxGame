@@ -34,6 +34,9 @@
 			if (Other && Other != src)
 				continue
 
+			if (GetFootPosY(M) < GetFineY())
+				continue
+
 			if (GetFootPosY(M) < GetSolidPosY(M))
 				M.MoveBy(0, GetSolidPosY(M) - GetFootPosY(M))
 				M.YVelocity = 0
