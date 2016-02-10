@@ -9,6 +9,8 @@
 	bound_height = 20
 	CanRide = FALSE
 
+	layer = PlayerLayer
+
 	var
 		atom/SpawnLocation
 		Emeralds = 0

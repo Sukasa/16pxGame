@@ -5,6 +5,8 @@
 
 	color = rgb(128, 160, 255)
 
+	layer = TurfLayer
+
 	proc
 		Neighbors()
 			. = list( )

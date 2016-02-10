@@ -5,6 +5,7 @@
 	dir = EAST
 	density = 1
 
+	layer = HighForegroundObjectLayer
 
 	bound_y = 26
 	bound_height = 6

@@ -19,6 +19,14 @@ var
 
 		DefaultWorldView = 9		// Default world view radius
 
+		TurfLayer = 1
+		BackgroundObjectLayer = 5
+		ForegroundObjectLayer = 10
+		MobLayer = 15
+		PlayerLayer = 17
+		HighForegroundObjectLayer = 20
+		HUDLayer = 99
+
 
 		Gravity = 0.6
 

@@ -1,6 +1,8 @@
 /obj
 	opacity = 0
 	density = 0
+	layer = ForegroundObjectLayer
+
 	var
 		CanHit = FALSE
 

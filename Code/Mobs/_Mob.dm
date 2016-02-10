@@ -1,4 +1,5 @@
 /mob
+	layer = MobLayer
 	var
 		YVelocity = 0
 		XVelocity = 0
