@@ -1,0 +1,2 @@
+/obj/Effect
+	layer = EffectLayer

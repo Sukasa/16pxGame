@@ -3,7 +3,6 @@
 	icon_state = "Explosion"
 	DamageValue = 2
 	density = 0
-	layer = FLY_LAYER
 
 	bound_width = 48
 	bound_x = -24

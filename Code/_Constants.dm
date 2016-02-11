@@ -25,8 +25,10 @@ var
 		MobLayer = 15
 		PlayerLayer = 17
 		HighForegroundObjectLayer = 20
-		HUDLayer = 99
 
+		EffectLayer = 30
+
+		HUDLayer = 99
 
 		Gravity = 0.6
 
