@@ -3,7 +3,7 @@
 
 	// A bit that says everything should die in
 	// here, even things normally immune to damage.
-	var/UniversalHazard = 1
+	UniversalHazard = 1
 
 	density = 1
 	bound_height = 6
