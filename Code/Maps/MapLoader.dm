@@ -224,6 +224,9 @@
 
 	var/IsChunk = !!Loc
 
+	if (!IsChunk) // If loading a new level entirely, clear the persistent-atom list
+		Ticker.PersistentTickAtoms.len = 0
+
 	for(var/mob/M in world)
 		if (M.client)
 			M.loc = locate(1, 1, 1)
