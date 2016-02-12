@@ -11,3 +11,7 @@
 
 		BlastDamage()
 			loc = null
+
+		Stone
+			icon = 'CrackedStone.dmi'
+			icon_state = "CrackedStone"
