@@ -14,8 +14,7 @@
 		Active = TRUE
 		Speed = 1
 
-	New()
-		..()
+	Init()
 		icon_state = "Conveyor[Active]"
 
 		if (dir == WEST)
@@ -46,8 +45,7 @@
 		var
 			SignalChannel = "OnOff"
 
-		New()
-			..()
+		Init()
 			var/datum/SignalChannel/SC = GetSignalChannel(SignalChannel)
 			SC.NotificationSubscriptions += src
 

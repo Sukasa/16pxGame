@@ -4,8 +4,7 @@
 
 	density = 0
 
-	New()
-		. = ..()
+	Init()
 		density = icon_state == "On"
 		var/datum/SignalChannel/SC = GetSignalChannel("OnOff")
 		SC.NotificationSubscriptions += src

@@ -14,8 +14,7 @@
 		Period = 6 // Seconds
 
 
-	New()
-		. = ..()
+	Init()
 		if (dir == SOUTH)
 			Mult *= -1
 

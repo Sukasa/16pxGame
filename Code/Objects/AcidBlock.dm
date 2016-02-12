@@ -18,7 +18,7 @@
 				M.Life = rand(11,23)
 				Ticker.PersistentTickAtoms |= M
 
-	New()
+	Init()
 		Ticker.PersistentTickAtoms |= src
 
 	Tick()

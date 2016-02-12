@@ -13,8 +13,7 @@
 		Mult = 6
 		Period = 6 // Seconds
 
-	New()
-		. = ..()
+	Init()
 		if (dir == WEST)
 			Mult *= -1
 

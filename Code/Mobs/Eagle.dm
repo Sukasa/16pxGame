@@ -29,8 +29,7 @@
 	GetGravityModifier()
 		return 0
 
-	New()
-		..()
+	Init()
 		ActivePeriod = Period * world.fps
 
 	Tick()

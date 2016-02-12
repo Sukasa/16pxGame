@@ -40,10 +40,13 @@
 
 
 	New()
-		..()
-		spawn
-			SpawnLocation = locate(/obj/PlayerStart)
-			Spawn()
+		if (Ticker.State == TickerRunning)
+			Init()
+
+	Init()
+		SpawnLocation = locate(/obj/PlayerStart)
+		ASSERT(SpawnLocation)
+		Spawn()
 
 	GetGravityModifier()
 		if (MoveStun)

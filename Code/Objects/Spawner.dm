@@ -12,7 +12,7 @@
 	BlastDamage()
 		return
 
-	New()
+	Init()
 		Ticker.PersistentTickAtoms += src
 
 	Tick()
