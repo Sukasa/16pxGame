@@ -24,10 +24,6 @@
 
 	proc
 
-		// Initialization function
-		Init()
-			return
-
 		ApplyExternalMovement(DX, DY)
 
 			// This accumulation has the odd size-effect of ordering by Y, due to how Riders are handled

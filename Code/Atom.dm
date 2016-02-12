@@ -7,6 +7,10 @@ atom
 
 	proc
 
+		// Initialization function
+		Init()
+			return
+
 		// Called when something is affected by blast damage
 		BlastDamage(atom/movable/Source)
 			return
