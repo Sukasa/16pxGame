@@ -27,6 +27,7 @@
 		const
 			MaxAccel = 1.2
 			MaxDecel = 1.3
+			AirAccelFactor = 0.6
 			JumpSpeed = 11.4
 			MaxSpeed = 6
 			MaxHealth = 2
@@ -83,13 +84,15 @@
 		if (!client) // If the client disconnected, twiddle thumbs
 			return;
 
+		var/AccelFactor = Grounded ? 1.0 : AirAccelFactor
+
 		if( client.ButtonDown("East") )
 			AnimBits |= AnimHintWalk
 
 			if (!Stun) // Go right
-				XVelocity = min(XVelocity + MaxAccel, MaxSpeed)
+				XVelocity = min(XVelocity + (MaxAccel * AccelFactor), MaxSpeed)
 				if (XVelocity < 0)
-					XVelocity += MaxDecel
+					XVelocity += MaxDecel * AccelFactor
 					if (XVelocity > 0)
 						XVelocity = 0
 
@@ -97,9 +100,9 @@
 			AnimBits |= AnimHintWalk
 
 			if (!Stun) // Go left
-				XVelocity = max(XVelocity - MaxAccel, -MaxSpeed)
+				XVelocity = max(XVelocity - (MaxAccel * AccelFactor), -MaxSpeed)
 				if (XVelocity > 0)
-					XVelocity -= MaxDecel
+					XVelocity -= MaxDecel * AccelFactor
 					if (XVelocity < 0)
 						XVelocity = 0
 
