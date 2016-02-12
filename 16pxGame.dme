@@ -8,6 +8,7 @@
 // BEGIN_FILE_DIR
 #define FILE_DIR .
 #define FILE_DIR "Icons"
+#define FILE_DIR "Icons/BGs"
 #define FILE_DIR "Resources"
 // END_FILE_DIR
 

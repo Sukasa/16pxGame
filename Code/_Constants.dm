@@ -20,6 +20,7 @@ var
 		DefaultWorldView = 9		// Default world view radius
 
 		TurfLayer = 1
+		ParallaxLayer = 2
 		BackgroundObjectLayer = 5
 		ForegroundObjectLayer = 10
 		MobLayer = 15
