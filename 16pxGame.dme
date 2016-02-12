@@ -42,6 +42,7 @@
 #include "Code\Mobs\IronCrate.dm"
 #include "Code\Mobs\LitBomb.dm"
 #include "Code\Mobs\Player.dm"
+#include "Code\Mobs\Squishy.dm"
 #include "Code\Objects\_Object.dm"
 #include "Code\Objects\AcidBlock.dm"
 #include "Code\Objects\Brick.dm"
