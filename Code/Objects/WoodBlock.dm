@@ -4,3 +4,6 @@
 
 	density = 1
 	CanHit = TRUE
+
+	BlastDamage()
+		loc = null
