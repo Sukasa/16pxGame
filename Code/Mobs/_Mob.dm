@@ -37,8 +37,9 @@
 			Alive = FALSE
 
 			var/matrix/Mx = transform || matrix()
-			transform = Mx.Scale(1, -1)
-			pixel_y -= (bound_y + bound_height)
+			Mx = Mx.Scale(1, -1)
+			var/BaseTranslate = round(bound_height / 16) * 16
+			transform = Mx.Translate(0, BaseTranslate - bound_height)
 
 			RidersActive.len = 0
 			RidersArchived.len = 0
@@ -49,6 +50,21 @@
 
 		Jump(var/force = 0)
 			return FALSE
+
+		XFlip()
+			var/matrix/M = transform || matrix()
+			M = M.Translate(bound_width, 0)
+			transform = M.Scale(-1, 1)
+
+		HasPlatform(Direction = 0)
+			Direction = Direction || dir
+			// Test to see if there is a platform shortly out in front of the mob, depending on dir
+
+			var/XOffs = 4 * sign(XVelocity) + (bound_width * (Direction == EAST))
+			var/obj/PassTest/Test = new(src, XOffs, 0, 4, 4)
+
+			. = Test.Test(36, 4) // 36, so we skip over a ramp and/or go down one block at a time
+
 
 	BlastDamage(atom/movable/Source)
 		Damage(Source)
@@ -114,11 +130,11 @@
 			M.SubStepX = SubStepX
 			M.SubStepY = SubStepY
 
-			M.MoveBy(XVelocity, 0)
+			M.ApplyExternalMovement(XVelocity, 0)
 
 			// If moving up, move the rider first
 			if (YVelocity > 0 || (StickyPlatform && YVelocity < 0))
-				M.MoveBy(0, YVelocity)
+				M.ApplyExternalMovement(0, YVelocity)
 
 			// 'Stick' players down against the platform
 			if (M.YVelocity > YVelocity && YVelocity < 0)
