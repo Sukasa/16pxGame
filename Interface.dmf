@@ -4,7 +4,7 @@ macro "Macros"
 window "MainWindow"
 	elem "MainWindow"
 		type = MAIN
-		pos = 335,23
+		pos = 281,0
 		size = 640x640
 		anchor1 = none
 		anchor2 = none
@@ -68,4 +68,28 @@ window "MainWindow"
 		on-show = ""
 		on-hide = ""
 		style = ""
+	elem "commands"
+		type = INPUT
+		pos = 20,592
+		size = 604x20
+		anchor1 = none
+		anchor2 = none
+		font-family = ""
+		font-size = 0
+		font-style = ""
+		text-color = #000000
+		background-color = #ffffff
+		is-visible = true
+		is-disabled = false
+		is-transparent = false
+		is-default = false
+		border = none
+		drop-zone = false
+		right-click = false
+		saved-params = ""
+		on-size = ""
+		command = "Say"
+		multi-line = false
+		is-password = false
+		no-command = false
 

@@ -16,11 +16,13 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include <topkasa\streamreader\StreamReader.dme>
 #include "Interface.dmf"
 #include "Code\_Constants.dm"
 #include "Code\Atom.dm"
 #include "Code\Client.dm"
 #include "Code\Datum.dm"
+#include "Code\DebugCommands.dm"
 #include "Code\Movable Atom.dm"
 #include "Code\Ticker.dm"
 #include "Code\Turf.dm"
@@ -28,6 +30,9 @@
 #include "Code\WorldMain.dm"
 #include "Code\Datums\Callback.dm"
 #include "Code\Datums\SignalChannel.dm"
+#include "Code\Maps\CachedMap.dm"
+#include "Code\Maps\MapLoader.dm"
+#include "Code\Maps\TileTemplate.dm"
 #include "Code\Mobs\_Mob.dm"
 #include "Code\Mobs\Crawler.dm"
 #include "Code\Mobs\Eagle.dm"

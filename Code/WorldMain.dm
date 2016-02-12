@@ -1,11 +1,13 @@
 var
 	datum/Ticker/Ticker = new()
 	list/AutoTile = list()
+	MapLoader/MapLoader = new()
 
 world
 	New()
 		..()
 		spawn
+			MapLoader.Init()
 
 			// Do bitmask handling for 47-state joins
 			for(var/X = 0; X < 256, X++)
@@ -21,7 +23,7 @@ world
 
 				AutoTile += B
 
-			for(var/atom/movable/AM)
-				AM.Init()
+			for(var/atom/A)
+				A.Init()
 
-			Ticker.Run()
+			Ticker.Start()

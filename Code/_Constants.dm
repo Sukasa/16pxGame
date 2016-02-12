@@ -47,6 +47,31 @@ var
 		AlphaOpaque = 255			// Fully opaque alpha.  Same effect as using Visible visibility
 		AlphaHalf = 128				// Semitransparent alpha, half-visible.
 
+		// ASCII Codes
+		Tab = 9						// ASCII code for a tab 					(	)
+		LineFeed = 10				// ASCII code for a line feed 				(\n)
+		CarriageReturn = 13			// ASCII code for a carriage return 		(\r)
+		Space = 32					// ASCII code for a space 					( )
+		DoubleQuote = 34			// ASCII code for a double quote 			(")
+		SingleQuote = 39			// ASCII code for a single quote			(')
+		OpenParenthesis = 40		// ASCII code for an open parenthesis 		(()
+		EndParenthesis = 41			// ASCII code for an end parenthesis 		())
+		Comma = 44					// ASCII code for a comma					(,)
+		ForwardSlash = 47			// ASCII code for a forward slash 			(/)
+		Semicolon = 59				// ASCII code for a semicolon				(;)
+		Equals = 61					// ASCII code for an equals sign character	(=)
+		N = 78						// ASCII code for N 						(N)
+		R = 82						// ASCII code for R 						(R)
+		SmallN = 110				// ASCII code for n 						(n)
+		SmallR = 114				// ASCII code for r 						(r)
+		Backslash = 92				// ASCII code for a backslash 				(\)
+		OpenBracket = 123			// ASCII code for a square opening bracket	([)
+		EndBracket = 125			// ASCII code for a square end bracket 		(])
+
+		TickerNotStarted = 0		// Game ticker has not started, or stopped
+		TickerRunning = 1			// Game ticker is running
+		TickerSuspended = 2			// Game ticker operation temporarily suspended
+
 	OnePixel = (1 / world.icon_size)	// Distance of one pixel
 
 	list
