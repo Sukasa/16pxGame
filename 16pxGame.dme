@@ -71,6 +71,7 @@
 #include "Code\Objects\Autojoin\GrassCliff.dm"
 #include "Code\Objects\Collectibles\_Collectible.dm"
 #include "Code\Objects\Collectibles\Emerald.dm"
+#include "Code\Objects\Decorative\Flower.dm"
 #include "Code\Objects\Decorative\Grass.dm"
 #include "Code\Objects\Decorative\GrassEdge.dm"
 #include "Code\Objects\Decorative\Mushroom.dm"
