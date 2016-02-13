@@ -51,11 +51,6 @@
 		Jump(var/force = 0)
 			return FALSE
 
-		XFlip()
-			var/matrix/M = transform || matrix()
-			M = M.Translate(bound_width, 0)
-			transform = M.Scale(-1, 1)
-
 		HasPlatform(Direction = 0)
 			Direction = Direction || dir
 			// Test to see if there is a platform shortly out in front of the mob, depending on dir
@@ -174,3 +169,7 @@
 		SuppressFallAnimation = FALSE
 
 
+	XFlip()
+		var/matrix/M = transform || matrix()
+		M = M.Translate(bound_width, 0)
+		transform = M.Scale(-1, 1)

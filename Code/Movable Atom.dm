@@ -23,6 +23,9 @@
 		Riding = list( )
 
 	proc
+		XFlip()
+			var/matrix/M = transform || matrix()
+			transform = M.Scale(-1, 1)
 
 		ApplyExternalMovement(DX, DY)
 

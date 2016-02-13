@@ -18,8 +18,7 @@
 		icon_state = "Conveyor[Active]"
 
 		if (dir == WEST)
-			var/matrix/MX = transform || matrix()
-			transform = MX.Scale(-1, 1)
+			XFlip()
 
 	Bumped(atom/movable/AM)
 		RidersActive += AM
@@ -46,6 +45,7 @@
 			SignalChannel = "OnOff"
 
 		Init()
+			..()
 			var/datum/SignalChannel/SC = GetSignalChannel(SignalChannel)
 			SC.NotificationSubscriptions += src
 
