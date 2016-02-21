@@ -6,7 +6,7 @@
 	bound_width = 16
 
 	var
-		Speed = 1.5
+		Speed = 2
 
 	Tick()
 		XVelocity = Speed
@@ -15,6 +15,7 @@
 			Turn()
 
 	Bump(var/atom/movable/AM)
+		..()
 		if (isplayer(AM))
 			AM:Damage(src)
 
@@ -28,6 +29,7 @@
 					AM:Jump(0.5)
 		else if (isplayer(AM))
 			AM:Damage(src)
+
 	proc
 		Turn()
 			flick("Turn", src)
