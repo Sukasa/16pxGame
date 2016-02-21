@@ -7,7 +7,7 @@
 		bound_height = YSize || 4
 		bound_width = XSize || 4
 
-		world.log << Move(get_turf(Source), 0, Source.step_x, Source.step_y)
+		Move(get_turf(Source), 0, Source.step_x, Source.step_y)
 
 		MoveBy(XOffs, YOffs)
 
