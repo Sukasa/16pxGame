@@ -1,12 +1,16 @@
 /atom/movable
 	var
-		Point/Destination = null
+		Point
+			Destination = null
 		SubStepX = 0
 		SubStepY = 0
 		SmoothMove = 0
 		Underwater = FALSE
 		CanRide = TRUE
 		ExternalMoveFlag = FALSE
+
+		atom
+			TickLoc = null
 
 		list
 			RidersActive = list( )
@@ -21,6 +25,7 @@
 	Tick()
 		. = ..()
 		Riding = list( )
+		TickLoc = loc
 
 	proc
 		XFlip()
@@ -28,7 +33,6 @@
 			transform = M.Scale(-1, 1)
 
 		ApplyExternalMovement(DX, DY)
-
 			// This accumulation has the odd size-effect of ordering by Y, due to how Riders are handled
 			var/list/Movers = RidersActive | RidersArchived | src
 			for(var/X = 1; X <= Movers.len; X++)

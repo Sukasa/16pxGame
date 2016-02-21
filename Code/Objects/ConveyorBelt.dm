@@ -27,8 +27,7 @@
 		..()
 		if (Active)
 			for(var/atom/movable/AM in RidersActive)
-
-				var/obj/Conveyor/Other = locate(/obj/Conveyor) in get_step(AM.loc, SOUTH)
+				var/obj/Conveyor/Other = locate(/obj/Conveyor) in get_step(AM.TickLoc, SOUTH)
 				if (Other && Other != src)
 					continue
 
