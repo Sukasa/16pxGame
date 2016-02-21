@@ -40,7 +40,7 @@
 			Mx = Mx.Scale(1, -1)
 			var/BaseTranslate = round(bound_height / 16) * 16
 			transform = Mx.Translate(0, BaseTranslate - bound_height)
-
+			Underwater = FALSE
 			RidersActive.len = 0
 			RidersArchived.len = 0
 			for(var/mob/M in Riding)
