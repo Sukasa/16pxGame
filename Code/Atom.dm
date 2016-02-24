@@ -69,4 +69,4 @@ atom
 					B |= 1 << X
 			B = AutoTile[(B >> 1) + 1]
 			icon_state = "[B]"
-			world.log << "[B] @ [x], [y]"
+			//world.log << "[B] @ [x], [y]"
