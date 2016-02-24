@@ -81,6 +81,7 @@
 #include "Code\Objects\Effects\WaterSplash.dm"
 #include "Code\Objects\Hazards\_Hazard.dm"
 #include "Code\Objects\Hazards\DeepPit.dm"
+#include "Code\Objects\Hazards\Lava.dm"
 #include "Code\Utility\Geometry.dm"
 #include "Code\Utility\Lists.dm"
 #include "Code\Utility\Math.dm"

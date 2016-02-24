@@ -3,7 +3,9 @@
 	icon_state = "IronCrate"
 	DamageValue = 1
 
-	Damage()
+	Damage(var/atom/movable/Source)
+		if (istype(Source, /obj/Hazard) && Source:UniversalHazard)
+			..(Source)
 		return
 
 	// Iron crates can now do blast damage when they land on things
