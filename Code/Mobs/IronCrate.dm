@@ -2,6 +2,7 @@
 	icon = 'IronCrate.dmi'
 	icon_state = "IronCrate"
 	DamageValue = 1
+	NoBreathe = TRUE
 
 	Damage(var/atom/movable/Source)
 		if (istype(Source, /obj/Hazard) && Source:UniversalHazard)
