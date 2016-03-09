@@ -1,13 +1,17 @@
 /obj/Collectible
+	New()
+		..()
+		Ticker.PersistentTickAtoms += src
 
-	CrossedOver(atom/movable/AM)
+	CrossedOver(var/atom/movable/AM)
 		Crossed(AM)
 
-	Crossed(atom/movable/AM)
+	Crossed(var/atom/movable/AM)
 		if (isplayer(AM))
+			Ticker.PersistentTickAtoms -= src
 			loc = null
 			Collected(AM)
 
 	proc
-		Collected()
+		Collected(var/mob/Player/Player)
 			return
