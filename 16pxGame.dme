@@ -9,7 +9,23 @@
 #define FILE_DIR .
 #define FILE_DIR "Icons"
 #define FILE_DIR "Icons/BGs"
+#define FILE_DIR "Icons/Tilesets"
 #define FILE_DIR "Resources"
+#define FILE_DIR "Resources/Armadillo"
+#define FILE_DIR "Resources/Boomer"
+#define FILE_DIR "Resources/ChillPenguin"
+#define FILE_DIR "Resources/DeathRog"
+#define FILE_DIR "Resources/Flame"
+#define FILE_DIR "Resources/FlameFrozen"
+#define FILE_DIR "Resources/IntroStage"
+#define FILE_DIR "Resources/Launch"
+#define FILE_DIR "Resources/Sigma1"
+#define FILE_DIR "Resources/Sigma2"
+#define FILE_DIR "Resources/Sigma3"
+#define FILE_DIR "Resources/Sigma4"
+#define FILE_DIR "Resources/Spark"
+#define FILE_DIR "Resources/Sting"
+#define FILE_DIR "Resources/StormEagle"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -69,12 +85,16 @@
 #include "Code\Objects\Autojoin\_Autojoin.dm"
 #include "Code\Objects\Autojoin\BackgroundGrass.dm"
 #include "Code\Objects\Autojoin\GrassCliff.dm"
+#include "Code\Objects\Autojoin\SigmaPlatform.dm"
 #include "Code\Objects\Collectibles\_Collectible.dm"
 #include "Code\Objects\Collectibles\Emerald.dm"
+#include "Code\Objects\Collectibles\Powerup.dm"
+#include "Code\Objects\Collectibles\Powerup\Jump.dm"
 #include "Code\Objects\Decorative\Flower.dm"
 #include "Code\Objects\Decorative\Grass.dm"
 #include "Code\Objects\Decorative\GrassEdge.dm"
 #include "Code\Objects\Decorative\Mushroom.dm"
+#include "Code\Objects\Decorative\SigmaParts.dm"
 #include "Code\Objects\Effects\_Effect.dm"
 #include "Code\Objects\Effects\AirBubble.dm"
 #include "Code\Objects\Effects\Explosion.dm"
@@ -91,6 +111,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\DebugMap.dmm"
+#include "Maps\Metroidvania\GameStartArea.dmm"
 // END_INCLUDE
 
