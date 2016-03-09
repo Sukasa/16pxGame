@@ -49,6 +49,8 @@ atom
 					Dist = GetDistanceTo(Candidate)
 					. = Candidate
 
+		// Returns TRUE if the atom is on-screen for any player.
+		// Expand is measured in tiles, and expands the view to account for larger graphical objects
 		IsOnScreen(var/Expand = 0)
 			var/list/Range = range(world.view + Expand, src)
 			for(var/client/C)
