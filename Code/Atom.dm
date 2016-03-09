@@ -4,6 +4,7 @@ atom
 	var
 		Age = 0
 		DamageValue = 1
+		AutojoinPrefix = ""
 
 	proc
 
@@ -68,5 +69,5 @@ atom
 				if (!T || locate(type) in T)
 					B |= 1 << X
 			B = AutoTile[(B >> 1) + 1]
-			icon_state = "[B]"
+			icon_state = "[AutojoinPrefix][B]"
 			//world.log << "[B] @ [x], [y]"
