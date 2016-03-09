@@ -13,6 +13,7 @@
 
 	var
 		atom/SpawnLocation
+		list/Powerups
 		Emeralds = 0
 		Health = 2
 
@@ -116,6 +117,14 @@
 
 		// Jump w/ height control - release early for shorter jump
 		if (!Stun && client.ButtonPressed("Space"))
+
+			// Double Jump Powerup
+			if (!Grounded && YVelocity < 4.5)
+				var/obj/A = locate(/obj/Collectible/Powerup/Jump) in Powerups
+				if (A)
+					Grounded = TRUE
+					Powerups -= A
+
 			Jump()
 		else if (Stun || !client.ButtonDown("Space"))
 			if (YVelocity > 4.5)
@@ -210,5 +219,6 @@
 		YVelocity = 0
 		SubStepX = 0
 		SubStepY = 0
+		Powerups = list( )
 		Invincibility = 1 // 1 frame of invincibility, so that if we get hit by a double-bump (aka landed on 2 spike blocks at once) it doesn't kill us, make us respawn, and -then- damage us again
 		Health = MaxHealth
