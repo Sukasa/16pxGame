@@ -3,8 +3,10 @@
 	icon_state = "124"
 	density = 0
 	layer = BackgroundObjectLayer
+	MatchTypes = list( /turf/Autojoin/Grass )
 
 	Init()
+
 		..()
 		if (icon_state == "64" || icon_state == "112")
 			CreateEdge(EAST, /obj/Decorative/GrassEdge)
