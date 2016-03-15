@@ -8,6 +8,6 @@ world
 	fps = 30
 	view = DefaultWorldView
 	cache_lifespan = 0
-	turf = /turf
+	turf = /turf/Nothing
 	mob = /mob/Player
 	loop_checks = 0

@@ -1,11 +1,13 @@
 /turf
-	name = "Empty Space"
-	icon = 'Flats.dmi'
-	icon_state = "White"
-
-	color = rgb(128, 160, 255)
 
 	layer = TurfLayer
+
+	Nothing
+		name = "Empty Space"
+		icon = 'Flats.dmi'
+		icon_state = "White"
+
+		color = rgb(128, 160, 255)
 
 	proc
 		Neighbors()
