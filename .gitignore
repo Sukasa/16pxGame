@@ -4,5 +4,6 @@
 *.int
 *.png
 *.lnk
+Maps*\/backup\/*.dmm
 Thumbs.db
 MDATA
