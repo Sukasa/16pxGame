@@ -102,6 +102,9 @@
 #include "Code\Objects\Hazards\_Hazard.dm"
 #include "Code\Objects\Hazards\DeepPit.dm"
 #include "Code\Objects\Hazards\Lava.dm"
+#include "Code\Turfs\_Autojoin.dm"
+#include "Code\Turfs\Grass.dm"
+#include "Code\Turfs\Sigma1.dm"
 #include "Code\Utility\Geometry.dm"
 #include "Code\Utility\Lists.dm"
 #include "Code\Utility\Math.dm"
@@ -111,6 +114,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\Metroidvania\GameStartArea.dmm"
+#include "Maps\DebugMap2.dmm"
 // END_INCLUDE
 
