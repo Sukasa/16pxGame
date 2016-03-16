@@ -22,6 +22,9 @@
 		for(var/x = Affecting.len; x >= 1; x--)
 			var/mob/M = Affecting[x]
 
+			if (!M.density)
+				continue
+
 			var/xL = M.GetFineX() + M.bound_x
 			var/xR = xL + M.bound_width
 
