@@ -21,7 +21,6 @@
 				M.Life = rand(15, 20)
 				Ticker.PersistentTickAtoms |= M
 
-
 	Init()
 		Ticker.PersistentTickAtoms |= src
 
@@ -50,7 +49,7 @@
 			M.Damage(src)
 
 		Cooldown -= 1
-		if( Cooldown <= 0  && Cooldown >= -1)
+		if( Cooldown == 0 || Cooldown == -1)
 			SpawnBubble()
 
 
