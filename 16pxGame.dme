@@ -116,6 +116,6 @@
 #include "Code\Utility\Text.dm"
 #include "Code\Utility\TurfHelpers.dm"
 #include "Code\Utility\Types.dm"
-#include "Maps\DebugMap.dmm"
+#include "Maps\Metroidvania\GameStartArea.dmm"
 // END_INCLUDE
 
