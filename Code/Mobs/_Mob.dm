@@ -61,7 +61,7 @@
 			// Test to see if there is a platform shortly out in front of the mob, depending on dir
 
 			var/XOffs = 4 * sign(XVelocity) + (bound_width * (Direction == EAST))
-			var/obj/PassTest/Test = new(src, XOffs, 0, 4, 4)
+			var/obj/Runtime/PassTest/Test = new(src, XOffs, 0, 4, 4)
 
 			. = Test.Test(36, 4) // 36, so we skip over a ramp and/or go down one block at a time
 

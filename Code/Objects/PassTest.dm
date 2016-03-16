@@ -1,4 +1,4 @@
-/obj/PassTest
+/obj/Runtime/PassTest
 	density = 0
 
 	New(var/atom/movable/Source, var/XOffs = 0, var/YOffs = 0, var/XSize = 0, var/YSize = 0)
