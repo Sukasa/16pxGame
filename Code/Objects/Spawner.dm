@@ -14,12 +14,15 @@
 
 	Init()
 		Ticker.PersistentTickAtoms += src
+		if (istext(SpawnType))
+			SpawnType = text2path(SpawnType)
 
 	Tick()
 		if (--Cooldown <= 0)
 			Cooldown = rand(CooldownPeriod) + CooldownMin
 			if (SpawnType)
 				var/mob/M = new SpawnType(loc)
+				world.log << "Spawned new [SpawnType]"
 				M.XVelocity = rand() * (MaxXVelocity - MinXVelocity) + MinXVelocity
 				M.YVelocity = rand() * (MaxYVelocity - MinYVelocity) + MinYVelocity
 
