@@ -8,6 +8,7 @@
 		CurrentMap
 
 		savefile/MapCache
+		SpawnTag = null
 
 		list
 			Templates = list( )
@@ -284,7 +285,14 @@
 		A.Init()
 
 	for(var/mob/Player/M)
-		M.SpawnLocation = locate(/obj/PlayerStart)
+		M.SpawnLocation = null
+
+		if (SpawnTag)
+			M.SpawnLocation = locate(SpawnTag)
+
+		if (!M.SpawnLocation)
+			M.SpawnLocation = locate(/obj/PlayerStart)
+
 		M.Spawn()
 
 	sleep(world.timeofday - StartTime)
