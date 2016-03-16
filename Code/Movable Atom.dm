@@ -27,6 +27,12 @@
 		Riding = list( )
 		TickLoc = loc
 
+	GetFineX()
+		return (src.x * world.icon_size) + src.step_x
+
+	GetFineY()
+		return (src.y * world.icon_size) + src.step_y
+
 	proc
 		XFlip()
 			var/matrix/M = transform || matrix()
@@ -90,12 +96,6 @@
 		HitZoneCallback(var/mob/M)
 			return
 
-		GetFineX()
-			return (src.x * world.icon_size) + src.step_x
-
-		GetFineY()
-			return (src.y * world.icon_size) + src.step_y
-
 		GetCenterX()
 			return (src.x * world.icon_size) + src.step_x + src.bound_x + SubStepX + (src.bound_width / 2)
 
@@ -137,12 +137,9 @@
 		RightOf(atom/movable/Ref, Fudge)
 			return GetFineX() + bound_x + Fudge >= Ref.GetFineX() + Ref.bound_width + Ref.bound_x
 
-
-
 		// Determines if the atom is overlapping anything
 		Overlaps(atom/movable/AM)
-			. = TRUE
-			. = . && (GetFineX() + bound_x < AM.GetFineX() + AM.bound_x + AM.bound_width)
+			. = GetFineX() + bound_x < AM.GetFineX() + AM.bound_x + AM.bound_width
 			. = . && (GetFineX() + bound_x + bound_width > AM.GetFineX() + AM.bound_x)
 			. = . && (GetFineY() + bound_y < AM.GetFineY() + AM.bound_y + AM.bound_height)
 			. = . && (GetFineY() + bound_y + bound_height > AM.GetFineY() + AM.bound_y)

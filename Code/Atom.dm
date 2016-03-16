@@ -33,6 +33,11 @@ atom
 			var/Point/P = new(src)
 			return P.GetAngleTo(To)
 
+		GetFineX()
+			return src.x * world.icon_size
+
+		GetFineY()
+			return src.y * world.icon_size
 
 		// Returns the Distance to the passed atom
 		GetDistanceTo(var/atom/movable/To)
@@ -42,7 +47,6 @@ atom
 		GetXDistanceTo(var/atom/movable/To)
 			var/Point/P = new(src)
 			return P.GetXDistanceTo(To)
-
 
 		GetYDistanceTo(var/atom/movable/To)
 			var/Point/P = new(src)
