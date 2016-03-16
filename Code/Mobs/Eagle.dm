@@ -63,10 +63,11 @@
 
 				if (Grabbed)
 					SwoopPeriod /= 2
+					Grabbed.XVelocity = XVelocity
+					Grabbed.YVelocity = YVelocity
+
 				Grabbed = null
 				Target = null
-				Grabbed.XVelocity = XVelocity
-				Grabbed.YVelocity = YVelocity
 
 			if (Overlaps(Target) && State == 1 && !Grabbed)
 				Grabbed = Target
