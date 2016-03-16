@@ -119,7 +119,7 @@
 		if (!Stun && client.ButtonPressed("Space"))
 
 			// Double Jump Powerup
-			if (!Grounded && YVelocity < 4.5)
+			if (!Grounded && !Underwater && YVelocity < 4.5)
 				var/obj/A = locate(/obj/Collectible/Powerup/Jump) in Powerups
 				if (A)
 					Grounded = TRUE
