@@ -90,12 +90,6 @@
 		HitZoneCallback(var/mob/M)
 			return
 
-		CrossedOver(atom/movable/AM)
-			return
-
-		Bumped (var/atom/movable/AM)
-			return
-
 		GetFineX()
 			return (src.x * world.icon_size) + src.step_x
 

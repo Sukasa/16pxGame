@@ -18,6 +18,12 @@ atom
 		BlastDamage(atom/movable/Source)
 			return
 
+		CrossedOver(atom/movable/AM)
+			return
+
+		Bumped (var/atom/movable/AM)
+			return
+
 		// Returns the angle to the passed atom, where 0° is due north
 		GetAngleTo(var/atom/To)
 			var/Point/P = new(src)
