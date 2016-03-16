@@ -73,6 +73,15 @@ var
 		TickerRunning = 1			// Game ticker is running
 		TickerSuspended = 2			// Game ticker operation temporarily suspended
 
+		AutojoinNorth = 1
+		AutojoinNortheast = 2
+		AutojoinEast = 4
+		AutojoinSoutheast = 8
+		AutojoinSouth = 16
+		AutojoinSouthwest = 32
+		AutojoinWest = 64
+		AutojoinNorthwest = 128
+
 	OnePixel = (1 / world.icon_size)	// Distance of one pixel
 
 	list

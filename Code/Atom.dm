@@ -4,6 +4,8 @@ atom
 	var
 		Age = 0
 		DamageValue = 1
+		AutojoinFlags = 255
+
 		AutojoinPrefix = ""
 		list
 			MatchTypes = null
@@ -85,6 +87,8 @@ atom
 			var/turf/Start = get_turf(src)
 			var/Type = type
 			for(var/X = 1, X <= 8, X++)
+				if (!(AutojoinFlags & (1 << (X - 1))))
+					continue
 				var/turf/T = get_step(Start, Cardinal8[X])
 				if (!T || T.type == Type || (locate(Type) in T) || (T.type in MatchTypes))
 					B |= 1 << X
