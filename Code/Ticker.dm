@@ -9,6 +9,9 @@
 	proc
 		Run()
 			while (TRUE)
+
+				// Technically this has the ability to cause the game to suddenly hang after a while
+				// due to numeric limits (2^24), but..  that will only happen after 6.4 DAYS of continuous play.
 				TickFlag++
 
 				//if (!(TickFlag % 12))
