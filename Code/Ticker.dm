@@ -1,18 +1,25 @@
 /datum/Ticker
 	var
-		list/TickAtoms = list( )
+		//list/TickAtoms = list( )
 		list/PersistentTickAtoms = list( ) // Use this for blocks like the Acid block that gives off bubbles
 
+		TickFlag = 0
 		State = 0
 
 	proc
 		Run()
 			while (TRUE)
+				TickFlag++
 
-				while (State != TickerRunning)
-					sleep(world.tick_lag)
+				//if (!(TickFlag % 12))
+				//	world.log << world.cpu
 
-				TickAtoms = PersistentTickAtoms.Copy()
+				//TickAtoms = PersistentTickAtoms.Copy()
+
+				for(var/atom/A in PersistentTickAtoms)
+					if (A.LastTickVal != TickFlag)
+						A.Tick()
+						A.LastTickVal = TickFlag
 
 				for(var/datum/SignalChannel/SC in Signals)
 					SC.Tick()
@@ -20,13 +27,25 @@
 				// Tick all entities
 				for(var/mob/M)
 					if (M.loc)
-						TickAtoms |= M // Ensure that mobs are stuffed in before the blocks they are affecting
-						TickAtoms |= range(M, M.ActivationRange) // It affects Ramp functionality
+						if (M.LastTickVal != TickFlag)
+							M.Tick()
+							M.LastTickVal = TickFlag
 
-				for(var/atom/A in TickAtoms)
-					A.Tick()
+				for(var/mob/M)
+					if (M.loc)
+						for(var/atom/A in range(M, M.ActivationRange))
+							if (A.LastTickVal != TickFlag)
+								A.Tick()
+								A.LastTickVal = TickFlag
 
-				sleep(world.tick_lag) // Sleep for 1 frame
+						//TickAtoms |= M // Ensure that mobs are stuffed in before the blocks they are affecting
+						//TickAtoms |= range(M, M.ActivationRange) // It affects Ramp functionality
+
+				//for(var/atom/A in TickAtoms)
+					//A.Tick()
+				do
+					sleep(world.tick_lag) // Sleep for 1 frame
+				while (State != TickerRunning)
 
 		Start()
 			if (State == TickerNotStarted)

@@ -8,6 +8,8 @@ atom
 		list
 			MatchTypes = null
 
+		LastTickVal = -1
+
 	proc
 
 		// Initialization function
