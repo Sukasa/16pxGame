@@ -1,5 +1,6 @@
 /obj/Hazard/DeepPit
 	DamageValue = 9999999
+	color = rgb(0, 0, 0)
 
 	// A bit that says everything should die in
 	// here, even things normally immune to damage.

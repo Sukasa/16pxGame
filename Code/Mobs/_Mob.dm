@@ -32,14 +32,19 @@
 		Spawn()
 			return
 
-		Die()
+		Die(var/DespawnImmediately = FALSE)
 			density = 0
 			Alive = FALSE
 
-			var/matrix/Mx = transform || matrix()
-			Mx = Mx.Scale(1, -1)
-			var/BaseTranslate = round(bound_height / 16) * 16
-			transform = Mx.Translate(0, BaseTranslate - bound_height)
+			if (DespawnImmediately)
+				y = 1
+				invisibility = 101
+			else
+				var/matrix/Mx = transform || matrix()
+				Mx = Mx.Scale(1, -1)
+				var/BaseTranslate = round(bound_height / 16) * 16
+				transform = Mx.Translate(0, BaseTranslate - bound_height)
+
 			Underwater = FALSE
 			RidersActive.len = 0
 			RidersArchived.len = 0
@@ -88,7 +93,7 @@
 
 		. = ..()
 
-		if (!Alive && x <= 1)
+		if (!Alive && y <= 1)
 			loc = null
 
 		// If underwater, emit a bubble on occasion
@@ -97,7 +102,7 @@
 				BubbleCooldown--
 			else
 				BubbleCooldown = (rand() * BubblePeriodVar + BubblePeriodMin) * world.fps
-				var/obj/Decor/Airbubble/AB = new(loc)
+				var/obj/Effect/Airbubble/AB = new(loc)
 				AB.step_x = step_x + bound_x
 				AB.step_y += step_y + bound_y
 				if (dir == EAST)

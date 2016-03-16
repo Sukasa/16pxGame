@@ -1,4 +1,4 @@
-/obj/Decor/Airbubble
+/obj/Effect/Airbubble
 	name = "Bubble"
 	density = 0
 	icon = 'AirBubble.dmi'

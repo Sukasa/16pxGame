@@ -1,14 +1,29 @@
 /obj/Hazard/Lava
-	DamageValue = 0 // Lava surface shouldn't hurt you, deep lava should
+	DamageValue = Infinity
 	UniversalHazard = 1
 	density = 0
-	icon = 'Pit.dmi'
-	icon_state = "Pit"
+	bound_height = 20
+	icon = 'Lava.dmi'
+	icon_state = "LavaSurface"
 	layer = HighForegroundObjectLayer
-
 
 	var
 		list/Affecting = list()
+		Cooldown = 0
+
+	proc
+		SpawnBubble()
+			Cooldown = rand() * 5.1 * world.fps + world.fps
+
+			if( IsOnScreen(1) )
+				var/obj/Effect/M = new /obj/Effect/LavaBubble(get_step(loc, NORTH))
+				M.step_x = rand(-14,14)
+				M.Life = rand(15, 20)
+				Ticker.PersistentTickAtoms |= M
+
+
+	Init()
+		Ticker.PersistentTickAtoms |= src
 
 	Crossed(var/atom/movable/AM)
 		if (ismob(AM))
@@ -19,6 +34,8 @@
 		if (ismob(AM))
 			Affecting -= AM
 			AM:Gooped--
+			if (Above(AM))
+				AM:Die(TRUE)
 
 	Tick()
 		..()
@@ -29,13 +46,20 @@
 			if (Other && Other != src)
 				continue
 
-			M.YVelocity = 0
+			M.YVelocity = (Gravity * M.GetGravityModifier()) * 0.75
 			M.Damage(src)
+
+		Cooldown -= 1
+		if( Cooldown <= 0  && Cooldown >= -1)
+			SpawnBubble()
 
 
 	Deep
-		DamageValue = 9999999
 		bound_height = 32
 		icon = 'Flats.dmi'
 		icon_state = "White"
-		color = rgb(224, 0, 0)
+		color = rgb(255, 51, 51)
+		Cooldown = -2
+
+		Init()
+			return
