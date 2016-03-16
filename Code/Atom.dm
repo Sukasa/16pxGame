@@ -62,10 +62,16 @@ atom
 		// Returns TRUE if the atom is on-screen for any player.
 		// Expand is measured in tiles, and expands the view to account for larger graphical objects
 		IsOnScreen(var/Expand = 0)
-			var/list/Range = range(world.view + Expand, src)
+			var/MyX = src:GetFineX()
+			var/MyY = src:GetFineY()
+
 			for(var/client/C)
-				if (C.eye in Range)
-					return TRUE
+				if (C.eye)
+					var/EyeX = C.eye:GetFineX()
+					var/EyeY = C.eye:GetFineY()
+
+					if (min(abs(MyX - EyeX), abs(MyY - EyeY)) < (world.view + Expand) * world.icon_size)
+						return TRUE
 			return FALSE
 
 		Notify(State, datum/SignalChannel/Channel)
