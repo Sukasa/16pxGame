@@ -36,14 +36,12 @@
 	ParseMap()
 	CreateMap()
 
-
 // Import a map file into the cache
 /MapLoader/proc/ImportMap(var/Filename, var/MapID)
 	ASSERT(fexists(Filename))
 	Reader = new(Filename)
 	Reader.StripCarriageReturns()
 	MapCache[MapID + "-raw"] << Reader.TextFile
-	del Reader
 
 // Save a parsed map to cache
 /MapLoader/proc/SaveMap(var/MapID)
@@ -88,12 +86,6 @@
 
 	// Parse Z Level
 	ParseZLevel()
-
-	// Done
-	del Reader
-	return
-
-
 
 // Parses a template line
 /MapLoader/proc/ParseTemplateLine()
