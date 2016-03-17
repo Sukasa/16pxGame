@@ -4,5 +4,6 @@
 		SpawnTag = ""
 
 	Notify(var/State)
-		MapLoader.SpawnTag = SpawnTag
-		MapLoader.LoadMap(MapName)
+		spawn
+			MapLoader.SpawnTag = SpawnTag
+			MapLoader.LoadMap(MapName)
