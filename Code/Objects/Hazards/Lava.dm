@@ -23,6 +23,7 @@
 
 	Init()
 		Ticker.PersistentTickAtoms |= src
+		Cooldown = rand() * 5.1 * world.fps + world.fps
 
 	Crossed(var/atom/movable/AM)
 		if (ismob(AM))
@@ -41,6 +42,9 @@
 		for(var/x = Affecting.len; x >= 1; x--)
 			var/mob/M = Affecting[x]
 
+			if (!M.Alive)
+				continue
+
 			var/obj/Hazard/Lava/Other = locate(/obj/Hazard/Lava) in M.loc
 			if (Other && Other != src)
 				continue
@@ -48,8 +52,8 @@
 			M.YVelocity = (Gravity * M.GetGravityModifier()) * 0.75
 			M.Damage(src)
 
-		Cooldown -= 1
-		if( Cooldown == 0 || Cooldown == -1)
+		Cooldown--
+		if( Cooldown < 1 && Cooldown > -2)
 			SpawnBubble()
 
 

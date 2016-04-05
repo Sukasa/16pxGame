@@ -2,8 +2,13 @@
 	var
 		MapName = ""
 		SpawnTag = ""
+		tmp
+			Triggered = FALSE
 
 	Notify(var/State)
-		spawn
-			MapLoader.SpawnTag = SpawnTag
-			MapLoader.LoadMap(MapName)
+		if (!Triggered)
+			Triggered = TRUE
+			spawn
+				MapLoader.SpawnTag = SpawnTag
+				MapLoader.LoadMap(MapName)
+

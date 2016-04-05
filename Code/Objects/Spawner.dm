@@ -43,7 +43,7 @@
 
 				for(var/x = Created.len; x; x--)
 					var/mob/C = Created[x]
-					if (!C.loc)
+					if (!C || !C.loc)
 						Created -= C
 
 				if (Created.len < MaxNum && SpawnType)
