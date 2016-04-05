@@ -15,3 +15,17 @@
 			..()
 			if (dir == EAST)
 				pixel_x -= 16
+
+	Iron
+		icon_state = "Iron124"
+		AutojoinPrefix = "Iron"
+
+		Fancy
+			icon_state = "IronFancy124"
+			AutojoinPrefix = "IronFancy"
+
+		Midbar
+			icon_state = "IronMidBar68"
+			AutojoinPrefix = "IronMidBar"
+			density = 0
+			layer = HighForegroundObjectLayer
