@@ -91,6 +91,7 @@
 #include "Code\Objects\Collectibles\Emerald.dm"
 #include "Code\Objects\Collectibles\Powerup.dm"
 #include "Code\Objects\Collectibles\Powerup\Jump.dm"
+#include "Code\Objects\Decorative\BGPanel.dm"
 #include "Code\Objects\Decorative\Bush.dm"
 #include "Code\Objects\Decorative\Flower.dm"
 #include "Code\Objects\Decorative\Grass.dm"

@@ -98,3 +98,4 @@ atom
 					B |= 1 << X
 			B = AutoTile[(B >> 1) + 1]
 			icon_state = "[AutojoinPrefix][B]"
+			//world.log << "[x] [y] = [B]"
