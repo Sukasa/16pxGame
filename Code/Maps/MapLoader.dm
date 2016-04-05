@@ -30,14 +30,20 @@
 // Load a raw .dmm file, parse it, and create it.  Does not save the map to cache.
 /MapLoader/proc/LoadMap(var/Filename)
 	CurrentMap = Filename
+	if (!fexists(Filename))
+		Filename = "[Filename].dmm"
 	ASSERT(fexists(Filename))
+	Ticker.Suspend()
 	Reader = new(Filename)
 	Reader.StripCarriageReturns()
 	ParseMap()
 	CreateMap()
+	Ticker.Start()
 
 // Import a map file into the cache
 /MapLoader/proc/ImportMap(var/Filename, var/MapID)
+	if (!fexists(Filename))
+		Filename = "[Filename].dmm"
 	ASSERT(fexists(Filename))
 	Reader = new(Filename)
 	Reader.StripCarriageReturns()
@@ -212,7 +218,6 @@
 	ASSERT(TemplateMap)
 
 	var/StartTime = world.timeofday
-	Ticker.Suspend()
 	Signals.len = 0
 
 	var/IsChunk = !!Loc
@@ -288,4 +293,3 @@
 		M.Spawn()
 
 	sleep(world.timeofday - StartTime)
-	Ticker.Start()
