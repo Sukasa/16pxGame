@@ -9,6 +9,15 @@
 		density = 0
 		icon_state = "Railing"
 
+		End
+			icon_state = "RailingEnd"
+
 	End
-		density = 0
-		icon_state = "RailingEnd"
+		icon_state = "BridgeEnd"
+		bound_width = 10
+		dir = WEST
+
+		Init()
+			..()
+			if (dir == EAST)
+				bound_x = 22
